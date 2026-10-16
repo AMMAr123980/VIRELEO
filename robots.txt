@@ -1,0 +1,39 @@
+# VIRELEO robots.txt
+# Everything is public and crawlable, including search and AI answer engines (helps SEO, GEO and AEO).
+# `python3 tools/set-domain.py https://your-domain` adds the Sitemap line below.
+
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI search / answer engines
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://vireleo.me/sitemap.xml

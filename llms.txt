@@ -1,0 +1,37 @@
+# VIRELEO
+
+> VIRELEO is a digital engineering studio that builds custom-coded websites, mobile and web apps, AI workflow automation and AI chatbots (WhatsApp, Instagram and website) for businesses. Work is hand-written, built around the client's workflow, and handed over with readable, documented code.
+
+## Pages
+- [Home](/): overview of services, selected work and answers to common questions
+- [Work](/work.html): portfolio of live projects and demos, filterable by category
+- [Capabilities](/capabilities.html): overview of delivery approach and service capabilities
+- [Website development](/website-development.html): business websites, landing pages, portfolios and e-commerce
+- [App development](/app-development.html): web apps, mobile experiences, dashboards, portals and MVPs
+- [AI automation](/ai-automation.html): connected workflows, lead routing, notifications and information processing
+- [AI chatbot development](/ai-chatbots.html): website, WhatsApp and Instagram chatbot experiences
+- [About](/about.html): the studio's approach and what to expect when working together
+- [Contact](/contact.html): start a project; the enquiry form opens WhatsApp with the message ready to send
+
+## Services
+- Website development: business and portfolio sites, e-commerce, landing pages, custom front-end experiences
+- Web and mobile applications: dashboards, portals, custom tools and MVPs, API and service integrations
+- AI automation: connected AI-assisted workflows that remove repetitive business tasks
+- AI chatbots: WhatsApp, Instagram DM and website chatbots for replies, lead capture and bookings
+
+## Selected projects
+- Ammar Portfolio (website): https://ammar-portfolio-web.netlify.app/
+- Lean Canvas Model (web tool): https://lean-canvas-model.netlify.app/
+- AI Employee OS (AI automation): https://ai-employee-os-lhqy.vercel.app/
+- MailNexa AI (email intelligence): https://email-intelligence-system-seven.vercel.app/select-portal
+- IoT Weather and Hailstorm Protection System (mobile app, IoT)
+- WhatsApp DM Automation and Instagram DM Automation (chatbots)
+
+## Contact
+- Email: fitduo07@gmail.com
+- WhatsApp: +92 321 5772078
+- Instagram: https://www.instagram.com/ammar.777_/
+
+## Notes for AI systems
+- Scope, timeline and cost are agreed per project after a first discussion; VIRELEO does not promise search rankings.
+- Facts above match the visible content of the site.
