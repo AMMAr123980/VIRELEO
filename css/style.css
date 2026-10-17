@@ -2245,6 +2245,7 @@ body:has(.wa.is-visible) .vid-fab { bottom: 80px; }
 .service-project-visual { display: block; color: inherit; text-decoration: none; background: #eef2fa; overflow: hidden; }
 .service-project-visual .thumb { position: relative; display: grid; place-items: center; height: clamp(220px, 28vw, 340px); margin: 0; overflow: hidden; }
 .service-project-visual .thumb > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+.thumb:has(img) .mk-phone, .thumb:has(img) .mk-browser, .thumb:has(img) .mk-flow { display: none !important; }
 .service-project-copy { padding: 23px 25px 26px; }
 .service-project-copy .label { margin: 0 0 9px; color: #667085; font-size: .72rem; letter-spacing: .04em; text-transform: none; font-weight: 650; }
 .service-project-copy h3 { margin: 0; color: #101828; font-family: var(--font-head, Inter, sans-serif); font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.2; letter-spacing: -.035em; }
