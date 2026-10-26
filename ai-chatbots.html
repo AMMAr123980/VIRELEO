@@ -19,10 +19,13 @@
 <meta property="og:image:alt" content="VIRELEO — websites, apps and AI engineered to perform">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#0a0f1f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -57,27 +60,49 @@
 <!--seo:start-->
 <link rel="canonical" href="https://vireleo.me/ai-chatbots.html">
 <meta property="og:url" content="https://vireleo.me/ai-chatbots.html">
+<meta property="og:title" content="AI Chatbot Development for Websites & Messaging | VIRELEO">
+<meta property="og:description" content="Build AI chatbots for websites, WhatsApp and Instagram messaging with VIRELEO. Support common questions, lead capture and customer enquiry workflows.">
 <meta property="og:image" content="https://vireleo.me/images/og-image.jpg">
+<meta name="twitter:title" content="AI Chatbot Development for Websites & Messaging | VIRELEO">
+<meta name="twitter:description" content="Build AI chatbots for websites, WhatsApp and Instagram messaging with VIRELEO. Support common questions, lead capture and customer enquiry workflows.">
 <meta name="twitter:image" content="https://vireleo.me/images/og-image.jpg">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "Organization",
+   "@type": [
+    "Organization",
+    "ProfessionalService"
+   ],
    "@id": "https://vireleo.me/#organization",
    "name": "VIRELEO",
+   "alternateName": "VIRELEO Studio",
    "url": "https://vireleo.me/",
    "logo": {
     "@type": "ImageObject",
     "url": "https://vireleo.me/icon-512.png",
     "width": 512,
-    "height": 512
+    "height": 512,
+    "caption": "VIRELEO Logo"
    },
    "image": "https://vireleo.me/images/og-image.jpg",
    "description": "Digital engineering studio providing custom website development, mobile app development, AI automation and AI chatbot solutions.",
    "email": "fitduo07@gmail.com",
    "telephone": "+92 321 5772078",
+   "priceRange": "$$",
+   "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+   },
+   "founder": {
+    "@type": "Person",
+    "name": "Ammar Hassan Malik",
+    "jobTitle": "Founder & Lead Engineer",
+    "sameAs": [
+     "https://www.instagram.com/ammar.777_/"
+    ]
+   },
    "sameAs": [
     "https://www.instagram.com/ammar.777_/"
    ],
@@ -102,13 +127,56 @@
     "Instagram messaging automation",
     "Web applications",
     "SaaS MVP development"
-   ]
+   ],
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "VIRELEO Engineering Services",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Website development",
+       "description": "Custom-coded business websites, e-commerce, landing pages and web applications.",
+       "url": "https://vireleo.me/website-development.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Mobile app development",
+       "description": "Mobile and web apps shaped around real workflows, users and outcomes.",
+       "url": "https://vireleo.me/app-development.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI workflow automation",
+       "description": "Connected, AI-assisted workflows that remove repetitive business tasks.",
+       "url": "https://vireleo.me/ai-automation.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI chatbots and messaging automation",
+       "description": "AI chatbots for websites, WhatsApp and Instagram direct messages.",
+       "url": "https://vireleo.me/ai-chatbots.html"
+      }
+     }
+    ]
+   }
   },
   {
    "@type": "WebSite",
    "@id": "https://vireleo.me/#website",
    "url": "https://vireleo.me/",
    "name": "VIRELEO",
+   "alternateName": "VIRELEO Studio",
    "inLanguage": "en",
    "publisher": {
     "@id": "https://vireleo.me/#organization"
@@ -159,7 +227,8 @@
     "provider": {
      "@id": "https://vireleo.me/#organization"
     },
-    "serviceType": "AI chatbot development"
+    "serviceType": "AI chatbot development",
+    "areaServed": "Worldwide"
    }
   }
  ]
@@ -207,8 +276,8 @@
  <p class="section-sub">Explore practical options based on your users, goals and current tools.</p><div class="detail-grid"><article class="detail-card"><p class="label">01 / Ai Chatbot Development</p><h2>Website customer-support chatbots</h2><p>Help visitors find approved answers and guide them to the right next step.</p></article><article class="detail-card"><p class="label">02 / Ai Chatbot Development</p><h2>WhatsApp and Instagram messaging workflows</h2><p>Automate supported messaging flows while respecting platform rules and account permissions.</p></article><article class="detail-card"><p class="label">03 / Ai Chatbot Development</p><h2>FAQ and knowledge-based responses</h2><p>Ground responses in business-approved information and define what the bot should not answer.</p></article><article class="detail-card"><p class="label">04 / Ai Chatbot Development</p><h2>Lead capture, enquiry routing and human handoff</h2><p>Collect relevant enquiry details and provide a clear route to a human when needed.</p></article></div></div></section>
 
 
-<section class="service-projects section-cream"><div class="wrap"><p class="label">Selected work</p><h2 class="section-title">Projects in this category</h2><p class="section-sub">Explore relevant work and open a project to see more.</p><div class="service-project-grid"><article class="service-project-card"><a class="service-project-visual" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20DM%20Automation%20project." target="_blank" rel="noopener"><div class="thumb" data-cat="chatbot"><img src="images/projects/whatsapp-dm-wide.jpg" alt="WhatsApp DM automation preview" loading="lazy"></div></a><div class="service-project-copy"><p class="label">AI chatbot · On request</p><h3>WhatsApp DM Automation</h3><p>Automated replies, lead capture and booking flows inside WhatsApp conversations.</p><a class="service-project-link" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20DM%20Automation%20project." target="_blank" rel="noopener">Ask about project ↗</a></div></article>
-<article class="service-project-card"><a class="service-project-visual" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Instagram%20DM%20Automation%20project." target="_blank" rel="noopener"><div class="thumb" data-cat="chatbot"><img src="images/projects/instagram-dm-wide.jpg" alt="Instagram DM automation preview" loading="lazy"></div></a><div class="service-project-copy"><p class="label">AI chatbot · On request</p><h3>Instagram DM Automation</h3><p>Consistent automated answers for Instagram enquiries and new leads.</p><a class="service-project-link" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Instagram%20DM%20Automation%20project." target="_blank" rel="noopener">Ask about project ↗</a></div></article></div><p class="service-project-all"><a href="work.html">Explore all projects ↗</a></p></div></section>
+<section class="service-projects section-cream"><div class="wrap"><p class="label">Selected work</p><h2 class="section-title">Projects in this category</h2><p class="section-sub">Explore relevant work and open a project to see more.</p><div class="service-project-grid"><article class="service-project-card"><a class="service-project-visual" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20DM%20Automation%20project." target="_blank" rel="noopener"><div class="thumb" data-cat="chatbot"><img src="images/projects/whatsapp-dm-wide.jpg" alt="WhatsApp DM automation preview" loading="lazy" width="1686" height="952" decoding="async"></div></a><div class="service-project-copy"><p class="label">AI chatbot · On request</p><h3>WhatsApp DM Automation</h3><p>Automated replies, lead capture and booking flows inside WhatsApp conversations.</p><a class="service-project-link" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20DM%20Automation%20project." target="_blank" rel="noopener">Ask about project ↗</a></div></article>
+<article class="service-project-card"><a class="service-project-visual" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Instagram%20DM%20Automation%20project." target="_blank" rel="noopener"><div class="thumb" data-cat="chatbot"><img src="images/projects/instagram-dm-wide.jpg" alt="Instagram DM automation preview" loading="lazy" width="1192" height="697" decoding="async"></div></a><div class="service-project-copy"><p class="label">AI chatbot · On request</p><h3>Instagram DM Automation</h3><p>Consistent automated answers for Instagram enquiries and new leads.</p><a class="service-project-link" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Instagram%20DM%20Automation%20project." target="_blank" rel="noopener">Ask about project ↗</a></div></article></div><p class="service-project-all"><a href="work.html">Explore all projects ↗</a></p></div></section>
 
 <section class="section section-cream"><div class="wrap"><p class="label">Frequently asked questions</p><h2 class="section-title">Questions about AI chatbot development.</h2><div class="detail-grid"><article class="detail-card"><h3>Can you build a chatbot for my website or WhatsApp?</h3><p>VIRELEO can plan chatbot experiences for websites and supported messaging channels such as WhatsApp and Instagram. Production deployment depends on platform access, API permissions, approved business accounts and the agreed workflow.</p></article><article class="detail-card"><h3>How do you help keep chatbot answers accurate?</h3><p>The chatbot can be designed around approved source information, clear limits, escalation rules and testing. Important or sensitive enquiries should have a human handoff path rather than relying on unsupported answers.</p></article></div></div></section>
 <section class="cta"><div class="wrap"><p class="label">Have a project in mind?</p><h2>Let's find the right solution.</h2><a class="btn btn-blue" href="contact.html">Discuss your project ↗</a></div></section>

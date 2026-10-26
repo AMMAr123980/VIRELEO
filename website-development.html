@@ -19,10 +19,13 @@
 <meta property="og:image:alt" content="VIRELEO — websites, apps and AI engineered to perform">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#0a0f1f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -57,27 +60,49 @@
 <!--seo:start-->
 <link rel="canonical" href="https://vireleo.me/website-development.html">
 <meta property="og:url" content="https://vireleo.me/website-development.html">
+<meta property="og:title" content="Custom Website Development Services | VIRELEO">
+<meta property="og:description" content="VIRELEO builds fast, responsive business websites, landing pages, portfolio sites and e-commerce experiences with accessible design and search-friendly foundations.">
 <meta property="og:image" content="https://vireleo.me/images/og-image.jpg">
+<meta name="twitter:title" content="Custom Website Development Services | VIRELEO">
+<meta name="twitter:description" content="VIRELEO builds fast, responsive business websites, landing pages, portfolio sites and e-commerce experiences with accessible design and search-friendly foundations.">
 <meta name="twitter:image" content="https://vireleo.me/images/og-image.jpg">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "Organization",
+   "@type": [
+    "Organization",
+    "ProfessionalService"
+   ],
    "@id": "https://vireleo.me/#organization",
    "name": "VIRELEO",
+   "alternateName": "VIRELEO Studio",
    "url": "https://vireleo.me/",
    "logo": {
     "@type": "ImageObject",
     "url": "https://vireleo.me/icon-512.png",
     "width": 512,
-    "height": 512
+    "height": 512,
+    "caption": "VIRELEO Logo"
    },
    "image": "https://vireleo.me/images/og-image.jpg",
    "description": "Digital engineering studio providing custom website development, mobile app development, AI automation and AI chatbot solutions.",
    "email": "fitduo07@gmail.com",
    "telephone": "+92 321 5772078",
+   "priceRange": "$$",
+   "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+   },
+   "founder": {
+    "@type": "Person",
+    "name": "Ammar Hassan Malik",
+    "jobTitle": "Founder & Lead Engineer",
+    "sameAs": [
+     "https://www.instagram.com/ammar.777_/"
+    ]
+   },
    "sameAs": [
     "https://www.instagram.com/ammar.777_/"
    ],
@@ -102,13 +127,56 @@
     "Instagram messaging automation",
     "Web applications",
     "SaaS MVP development"
-   ]
+   ],
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "VIRELEO Engineering Services",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Website development",
+       "description": "Custom-coded business websites, e-commerce, landing pages and web applications.",
+       "url": "https://vireleo.me/website-development.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Mobile app development",
+       "description": "Mobile and web apps shaped around real workflows, users and outcomes.",
+       "url": "https://vireleo.me/app-development.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI workflow automation",
+       "description": "Connected, AI-assisted workflows that remove repetitive business tasks.",
+       "url": "https://vireleo.me/ai-automation.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI chatbots and messaging automation",
+       "description": "AI chatbots for websites, WhatsApp and Instagram direct messages.",
+       "url": "https://vireleo.me/ai-chatbots.html"
+      }
+     }
+    ]
+   }
   },
   {
    "@type": "WebSite",
    "@id": "https://vireleo.me/#website",
    "url": "https://vireleo.me/",
    "name": "VIRELEO",
+   "alternateName": "VIRELEO Studio",
    "inLanguage": "en",
    "publisher": {
     "@id": "https://vireleo.me/#organization"
@@ -159,7 +227,8 @@
     "provider": {
      "@id": "https://vireleo.me/#organization"
     },
-    "serviceType": "Website development"
+    "serviceType": "Website development",
+    "areaServed": "Worldwide"
    }
   }
  ]
@@ -207,8 +276,8 @@
  <p class="section-sub">Explore practical options based on your users, goals and current tools.</p><div class="detail-grid"><article class="detail-card"><p class="label">01 / Website Development</p><h2>Business and portfolio websites</h2><p>A clear structure helps visitors understand your offer and take the next step.</p></article><article class="detail-card"><p class="label">02 / Website Development</p><h2>Landing pages for products and campaigns</h2><p>Focused landing pages connect campaign messaging to a relevant conversion action.</p></article><article class="detail-card"><p class="label">03 / Website Development</p><h2>E-commerce storefronts and product experiences</h2><p>Product pages and checkout experiences should be usable, accessible and easy to maintain.</p></article><article class="detail-card"><p class="label">04 / Website Development</p><h2>Custom front-end interfaces and website refreshes</h2><p>Custom interfaces can support brand needs and interactions without unnecessary complexity.</p></article></div></div></section>
 
 
-<section class="service-projects section-cream"><div class="wrap"><p class="label">Selected work</p><h2 class="section-title">Projects in this category</h2><p class="section-sub">Explore relevant work and open a project to see more.</p><div class="service-project-grid"><article class="service-project-card"><a class="service-project-visual" href="https://ammar-portfolio-web.netlify.app/" target="_blank" rel="noopener"><div class="thumb" data-cat="web"><img src="images/projects/ammar-portfolio.jpg" alt="Ammar Portfolio preview" loading="lazy"></div></a><div class="service-project-copy"><p class="label">Website development · Live</p><h3>Ammar Portfolio</h3><p>A responsive portfolio website showcasing projects, skills and contact details.</p><a class="service-project-link" href="https://ammar-portfolio-web.netlify.app/" target="_blank" rel="noopener">View project ↗</a></div></article>
-<article class="service-project-card"><a class="service-project-visual" href="https://lean-canvas-model.netlify.app/" target="_blank" rel="noopener"><div class="thumb" data-cat="web"><img src="images/projects/lean-canvas-model.jpg" alt="Lean Canvas Model preview" loading="lazy"></div></a><div class="service-project-copy"><p class="label">Website development · Live</p><h3>Lean Canvas Model</h3><p>An interactive web tool to organise a business idea, customers, solutions and revenue.</p><a class="service-project-link" href="https://lean-canvas-model.netlify.app/" target="_blank" rel="noopener">View project ↗</a></div></article></div><p class="service-project-all"><a href="work.html">Explore all projects ↗</a></p></div></section>
+<section class="service-projects section-cream"><div class="wrap"><p class="label">Selected work</p><h2 class="section-title">Projects in this category</h2><p class="section-sub">Explore relevant work and open a project to see more.</p><div class="service-project-grid"><article class="service-project-card"><a class="service-project-visual" href="https://ammar-portfolio-web.netlify.app/" target="_blank" rel="noopener"><div class="thumb" data-cat="web"><img src="images/projects/ammar-portfolio.jpg" alt="Ammar Portfolio preview" loading="lazy" width="1200" height="900" decoding="async"></div></a><div class="service-project-copy"><p class="label">Website development · Live</p><h3>Ammar Portfolio</h3><p>A responsive portfolio website showcasing projects, skills and contact details.</p><a class="service-project-link" href="https://ammar-portfolio-web.netlify.app/" target="_blank" rel="noopener">View project ↗</a></div></article>
+<article class="service-project-card"><a class="service-project-visual" href="https://lean-canvas-model.netlify.app/" target="_blank" rel="noopener"><div class="thumb" data-cat="web"><img src="images/projects/lean-canvas-model.jpg" alt="Lean Canvas Model preview" loading="lazy" width="1200" height="900" decoding="async"></div></a><div class="service-project-copy"><p class="label">Website development · Live</p><h3>Lean Canvas Model</h3><p>An interactive web tool to organise a business idea, customers, solutions and revenue.</p><a class="service-project-link" href="https://lean-canvas-model.netlify.app/" target="_blank" rel="noopener">View project ↗</a></div></article></div><p class="service-project-all"><a href="work.html">Explore all projects ↗</a></p></div></section>
 
 <section class="section section-cream"><div class="wrap"><p class="label">Frequently asked questions</p><h2 class="section-title">Questions about Website development.</h2><div class="detail-grid"><article class="detail-card"><h3>What does website development include?</h3><p>Website development can include discovery, information architecture, responsive UI, front-end implementation, content integration, accessibility checks, performance improvements and launch support, depending on the agreed scope.</p></article><article class="detail-card"><h3>Will my website work on mobile?</h3><p>Yes. Responsive layouts are planned for mobile, tablet, laptop and desktop screens and should be tested across representative screen sizes before launch.</p></article></div></div></section>
 <section class="cta"><div class="wrap"><p class="label">Have a project in mind?</p><h2>Let's find the right solution.</h2><a class="btn btn-blue" href="contact.html">Discuss your project ↗</a></div></section>

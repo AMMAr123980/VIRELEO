@@ -20,10 +20,13 @@
 <meta property="og:image:alt" content="VIRELEO — websites, apps and AI engineered to perform">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#0a0f1f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -48,27 +51,49 @@
 <!--seo:start-->
 <link rel="canonical" href="https://vireleo.me/">
 <meta property="og:url" content="https://vireleo.me/">
+<meta property="og:title" content="VIRELEO — Website development, Mobile Apps & AI Automation">
+<meta property="og:description" content="VIRELEO builds custom websites, mobile apps, AI automation workflows and AI chatbots for businesses. Explore our digital engineering services and selected projects.">
 <meta property="og:image" content="https://vireleo.me/images/og-image.jpg">
+<meta name="twitter:title" content="VIRELEO — Website development, Mobile Apps & AI Automation">
+<meta name="twitter:description" content="VIRELEO builds custom websites, mobile apps, AI automation workflows and AI chatbots for businesses. Explore our digital engineering services and selected projects.">
 <meta name="twitter:image" content="https://vireleo.me/images/og-image.jpg">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "Organization",
+   "@type": [
+    "Organization",
+    "ProfessionalService"
+   ],
    "@id": "https://vireleo.me/#organization",
    "name": "VIRELEO",
+   "alternateName": "VIRELEO Studio",
    "url": "https://vireleo.me/",
    "logo": {
     "@type": "ImageObject",
     "url": "https://vireleo.me/icon-512.png",
     "width": 512,
-    "height": 512
+    "height": 512,
+    "caption": "VIRELEO Logo"
    },
    "image": "https://vireleo.me/images/og-image.jpg",
    "description": "Digital engineering studio providing custom website development, mobile app development, AI automation and AI chatbot solutions.",
    "email": "fitduo07@gmail.com",
    "telephone": "+92 321 5772078",
+   "priceRange": "$$",
+   "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+   },
+   "founder": {
+    "@type": "Person",
+    "name": "Ammar Hassan Malik",
+    "jobTitle": "Founder & Lead Engineer",
+    "sameAs": [
+     "https://www.instagram.com/ammar.777_/"
+    ]
+   },
    "sameAs": [
     "https://www.instagram.com/ammar.777_/"
    ],
@@ -93,13 +118,56 @@
     "Instagram messaging automation",
     "Web applications",
     "SaaS MVP development"
-   ]
+   ],
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "VIRELEO Engineering Services",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Website development",
+       "description": "Custom-coded business websites, e-commerce, landing pages and web applications.",
+       "url": "https://vireleo.me/website-development.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Mobile app development",
+       "description": "Mobile and web apps shaped around real workflows, users and outcomes.",
+       "url": "https://vireleo.me/app-development.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI workflow automation",
+       "description": "Connected, AI-assisted workflows that remove repetitive business tasks.",
+       "url": "https://vireleo.me/ai-automation.html"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI chatbots and messaging automation",
+       "description": "AI chatbots for websites, WhatsApp and Instagram direct messages.",
+       "url": "https://vireleo.me/ai-chatbots.html"
+      }
+     }
+    ]
+   }
   },
   {
    "@type": "WebSite",
    "@id": "https://vireleo.me/#website",
    "url": "https://vireleo.me/",
    "name": "VIRELEO",
+   "alternateName": "VIRELEO Studio",
    "inLanguage": "en",
    "publisher": {
     "@id": "https://vireleo.me/#organization"
@@ -233,10 +301,10 @@
       <div class="slider-nav"><button type="button" class="round-btn" id="svcPrev" aria-label="Previous service"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg></button><button type="button" class="round-btn is-primary" id="svcNext" aria-label="Next service"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
     </div>
     <div class="svc-track" data-stagger id="svcTrack">
-      <a class="svc-card" href="website-development.html"><div class="thumb" data-cat="web"><div class="mk-browser"><div class="mk-bar"><i></i><i></i><i></i></div><div class="mk-page"><b>Your website</b><i></i><i></i><em></em></div></div><img src="images/projects/lean-canvas-model.jpg" alt="Lean Canvas Model website project preview" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>Website development</h3><p>Premium, hand-coded websites with considered interaction design and performance built in. No drag-and-drop builders.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
-      <a class="svc-card" href="app-development.html"><div class="thumb" data-cat="app"><div class="mk-phone"><div class="sun"></div><div class="temp">24°</div><span class="bub"></span><span class="bub out short"></span><div class="alert">Notification</div></div><img src="images/projects/iot-weather.jpg" alt="IoT Weather and Hailstorm Protection System preview" loading="lazy" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>App Development</h3><p>Mobile applications designed around real use, from first prototype to a stable release.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
-      <a class="svc-card" href="ai-automation.html"><div class="thumb" data-cat="automation"><div class="mk-flow"><span class="node"></span><i class="link"></i><span class="node"></span><i class="link"></i><span class="node"></span></div><img src="images/projects/ai-employee-os.jpg" alt="AI Employee OS live Vercel project preview" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>AI Automation</h3><p>Business workflow automation and AI-powered processes, connected to the systems you already use.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
-      <a class="svc-card" href="ai-chatbots.html"><div class="thumb" data-cat="chatbot"><div class="mk-phone"><span class="bub"></span><span class="bub out"></span><span class="bub short"></span><span class="bub out short"></span><span class="bub"></span></div><img src="images/projects/whatsapp-dm-wide.jpg" alt="WhatsApp chatbot conversation preview" loading="lazy" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>AI Chatbot Development</h3><p>Assistants for your website, WhatsApp and Instagram that know your business and answer in seconds.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
+      <a class="svc-card" href="website-development.html"><div class="thumb" data-cat="web"><div class="mk-browser"><div class="mk-bar"><i></i><i></i><i></i></div><div class="mk-page"><b>Your website</b><i></i><i></i><em></em></div></div><img src="images/projects/lean-canvas-model.jpg" alt="Lean Canvas Model website project preview" width="1200" height="900" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>Website development</h3><p>Premium, hand-coded websites with considered interaction design and performance built in. No drag-and-drop builders.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
+      <a class="svc-card" href="app-development.html"><div class="thumb" data-cat="app"><div class="mk-phone"><div class="sun"></div><div class="temp">24°</div><span class="bub"></span><span class="bub out short"></span><div class="alert">Notification</div></div><img src="images/projects/iot-weather.jpg" alt="IoT Weather and Hailstorm Protection System preview" width="1376" height="768" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>App Development</h3><p>Mobile applications designed around real use, from first prototype to a stable release.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
+      <a class="svc-card" href="ai-automation.html"><div class="thumb" data-cat="automation"><div class="mk-flow"><span class="node"></span><i class="link"></i><span class="node"></span><i class="link"></i><span class="node"></span></div><img src="images/projects/ai-employee-os.jpg" alt="AI Employee OS live Vercel project preview" width="1200" height="900" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>AI Automation</h3><p>Business workflow automation and AI-powered processes, connected to the systems you already use.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
+      <a class="svc-card" href="ai-chatbots.html"><div class="thumb" data-cat="chatbot"><div class="mk-phone"><span class="bub"></span><span class="bub out"></span><span class="bub short"></span><span class="bub out short"></span><span class="bub"></span></div><img src="images/projects/whatsapp-dm-wide.jpg" alt="WhatsApp chatbot conversation preview" width="1686" height="952" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="svc-card-body"><p class="label">Interface concept</p><h3>AI Chatbot Development</h3><p>Assistants for your website, WhatsApp and Instagram that know your business and answer in seconds.</p><div class="svc-foot"><span class="label">Service</span><span class="arrow-link label">Explore work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span></div></div></a>
     </div>
   </div>
 </section>
@@ -369,7 +437,7 @@
   <a href="ai-chatbots.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>AI Chatbots</a>
 </nav>
 <button type="button" class="vid-fab" id="vidOpen" aria-label="Watch VIRELEO intro video" aria-haspopup="dialog">
-  <img src="videos/vireleo-intro-poster.jpg" alt="" width="60" height="60" loading="lazy">
+  <img src="videos/vireleo-intro-poster.jpg" alt="VIRELEO studio introduction video preview" width="60" height="60" loading="lazy" decoding="async">
   <span class="vid-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span>
   <span class="vid-tip">Watch intro</span>
 </button>

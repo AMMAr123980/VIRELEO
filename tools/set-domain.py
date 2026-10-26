@@ -1,74 +1,158 @@
 #!/usr/bin/env python3
 """
-Run ONCE when you know the final domain (and again if the domain changes):
-
+Enhanced SEO & Schema Automation for VIRELEO
+Run with:
     python tools/set-domain.py https://vireleo.me
 
-It writes into every page's <head> (between the <!--seo:start--> and <!--seo:end--> markers):
-canonical link, og:url, og:image, twitter:image, and one JSON-LD graph (Organization with url + logo,
-WebSite, WebPage/AboutPage/ContactPage/CollectionPage, BreadcrumbList, Service list on Capabilities,
-project ItemList on Work). It also creates sitemap.xml and activates the Sitemap line in robots.txt.
-Safe to re-run: it replaces its own block every time. Nothing else in the pages is touched.
+Features:
+- Validated Google Search Favicon setup (48x48, 192x192, 512x512, ICO, Apple Touch Icon)
+- Standardized Open Graph & Twitter Card tags per page
+- Advanced JSON-LD Schema: Organization, ProfessionalService, WebSite, WebPage, BreadcrumbList, OfferCatalog, Services, ItemList
+- Dynamic, Google-compliant XML Sitemap with priorities and changefreq
+- AI and Search Engine friendly robots.txt
 """
 import sys, re, json, datetime, pathlib
 
 if len(sys.argv) != 2 or not re.match(r'^https://[a-z0-9.-]+\.[a-z]{2,}(:\d+)?$', sys.argv[1].rstrip('/'), re.I):
     sys.exit('Usage: python tools/set-domain.py https://vireleo.me   (must start with https://, no path)')
+
 SITE = sys.argv[1].rstrip('/')
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TODAY = datetime.date.today().isoformat()
 
-PAGES = [  # file, path, schema type, breadcrumb name
-    ('index.html', '/', 'WebPage', None),
-    ('work.html', '/work.html', 'CollectionPage', 'Work'),
-    ('capabilities.html', '/capabilities.html', 'CollectionPage', 'Capabilities'),
-    ('about.html', '/about.html', 'AboutPage', 'About'),
-    ('contact.html', '/contact.html', 'ContactPage', 'Contact'),
-    ('website-development.html', '/website-development.html', 'WebPage', 'Website Development'),
-    ('app-development.html', '/app-development.html', 'WebPage', 'App Development'),
-    ('ai-automation.html', '/ai-automation.html', 'WebPage', 'AI Automation'),
-    ('ai-chatbots.html', '/ai-chatbots.html', 'WebPage', 'AI Chatbots'),
-]
-SERVICES = [
-    ('Website development', 'Custom-coded business websites, e-commerce, landing pages and web applications.'),
-    ('Mobile app development', 'Mobile and web apps shaped around real workflows, users and outcomes.'),
-    ('AI workflow automation', 'Connected, AI-assisted workflows that remove repetitive business tasks.'),
-    ('AI chatbots and messaging automation', 'AI chatbots for websites, WhatsApp and Instagram direct messages.'),
+PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
+    ('index.html', '/', 'WebPage', None, '1.0', 'weekly'),
+    ('website-development.html', '/website-development.html', 'WebPage', 'Website Development', '0.9', 'monthly'),
+    ('app-development.html', '/app-development.html', 'WebPage', 'App Development', '0.9', 'monthly'),
+    ('ai-automation.html', '/ai-automation.html', 'WebPage', 'AI Automation', '0.9', 'monthly'),
+    ('ai-chatbots.html', '/ai-chatbots.html', 'WebPage', 'AI Chatbots', '0.9', 'monthly'),
+    ('work.html', '/work.html', 'CollectionPage', 'Work', '0.8', 'weekly'),
+    ('capabilities.html', '/capabilities.html', 'CollectionPage', 'Capabilities', '0.8', 'monthly'),
+    ('about.html', '/about.html', 'AboutPage', 'About', '0.7', 'monthly'),
+    ('contact.html', '/contact.html', 'ContactPage', 'Contact', '0.8', 'monthly'),
 ]
 
-js = (ROOT / 'js' / 'script.js').read_text(encoding='utf-8')
+SERVICES = [
+    ('Website development', 'Custom-coded business websites, e-commerce, landing pages and web applications.', f'{SITE}/website-development.html'),
+    ('Mobile app development', 'Mobile and web apps shaped around real workflows, users and outcomes.', f'{SITE}/app-development.html'),
+    ('AI workflow automation', 'Connected, AI-assisted workflows that remove repetitive business tasks.', f'{SITE}/ai-automation.html'),
+    ('AI chatbots and messaging automation', 'AI chatbots for websites, WhatsApp and Instagram direct messages.', f'{SITE}/ai-chatbots.html'),
+]
+
+js_path = ROOT / 'js' / 'script.js'
 projects = []
-for m in re.finditer(r'\{\s*id:\s*"([^"]+)",\s*cat:\s*"([^"]+)",\s*title:\s*"([^"]+)",\s*desc:\s*"([^"]+)"(?:,\s*url:\s*"([^"]+)")?', js):
-    projects.append(dict(id=m.group(1), title=m.group(3), desc=m.group(4), url=m.group(5)))
+if js_path.exists():
+    js = js_path.read_text(encoding='utf-8')
+    for m in re.finditer(r'\{\s*id:\s*"([^"]+)",\s*cat:\s*"([^"]+)",\s*title:\s*"([^"]+)",\s*desc:\s*"([^"]+)"(?:,\s*url:\s*"([^"]+)")?', js):
+        projects.append(dict(id=m.group(1), title=m.group(3), desc=m.group(4), url=m.group(5)))
 
 org_id = SITE + '/#organization'
 site_id = SITE + '/#website'
+
 org = {
-    "@type": "Organization", "@id": org_id, "name": "VIRELEO", "url": SITE + '/',
-    "logo": {"@type": "ImageObject", "url": SITE + '/icon-512.png', "width": 512, "height": 512},
+    "@type": ["Organization", "ProfessionalService"],
+    "@id": org_id,
+    "name": "VIRELEO",
+    "alternateName": "VIRELEO Studio",
+    "url": SITE + '/',
+    "logo": {
+        "@type": "ImageObject",
+        "url": SITE + '/icon-512.png',
+        "width": 512,
+        "height": 512,
+        "caption": "VIRELEO Logo"
+    },
     "image": SITE + '/images/og-image.jpg',
     "description": "Digital engineering studio providing custom website development, mobile app development, AI automation and AI chatbot solutions.",
-    "email": "fitduo07@gmail.com", "telephone": "+92 321 5772078",
-    "sameAs": ["https://www.instagram.com/ammar.777_/"],
-    "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "email": "fitduo07@gmail.com",
-                      "telephone": "+92 321 5772078", "availableLanguage": ["English", "Urdu"]}],
-    "knowsAbout": ["Custom website development", "Mobile app development", "AI workflow automation", "AI chatbots",
-                   "WhatsApp automation", "Instagram messaging automation", "Web applications", "SaaS MVP development"],
+    "email": "fitduo07@gmail.com",
+    "telephone": "+92 321 5772078",
+    "priceRange": "$$",
+    "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+    },
+    "founder": {
+        "@type": "Person",
+        "name": "Ammar Hassan Malik",
+        "jobTitle": "Founder & Lead Engineer",
+        "sameAs": ["https://www.instagram.com/ammar.777_/"]
+    },
+    "sameAs": [
+        "https://www.instagram.com/ammar.777_/"
+    ],
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "fitduo07@gmail.com",
+            "telephone": "+92 321 5772078",
+            "availableLanguage": ["English", "Urdu"]
+        }
+    ],
+    "knowsAbout": [
+        "Custom website development",
+        "Mobile app development",
+        "AI workflow automation",
+        "AI chatbots",
+        "WhatsApp automation",
+        "Instagram messaging automation",
+        "Web applications",
+        "SaaS MVP development"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "VIRELEO Engineering Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": name,
+                    "description": desc,
+                    "url": s_url
+                }
+            } for name, desc, s_url in SERVICES
+        ]
+    }
 }
-website = {"@type": "WebSite", "@id": site_id, "url": SITE + '/', "name": "VIRELEO", "inLanguage": "en",
-           "publisher": {"@id": org_id}}
+
+website = {
+    "@type": "WebSite",
+    "@id": site_id,
+    "url": SITE + '/',
+    "name": "VIRELEO",
+    "alternateName": "VIRELEO Studio",
+    "inLanguage": "en",
+    "publisher": {"@id": org_id}
+}
 
 def build_block(file, path, ptype, crumb, title, desc):
     url = SITE + path
     graph = [org, website]
-    page = {"@type": ptype, "@id": url + '#webpage', "url": url, "name": title, "description": desc,
-            "inLanguage": "en", "isPartOf": {"@id": site_id}, "about": {"@id": org_id},
-            "primaryImageOfPage": {"@type": "ImageObject", "url": SITE + '/images/og-image.jpg'}}
+    page = {
+        "@type": ptype,
+        "@id": url + '#webpage',
+        "url": url,
+        "name": title,
+        "description": desc,
+        "inLanguage": "en",
+        "isPartOf": {"@id": site_id},
+        "about": {"@id": org_id},
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": SITE + '/images/og-image.jpg'
+        }
+    }
     if crumb:
         page["breadcrumb"] = {"@id": url + '#breadcrumb'}
-        graph.append({"@type": "BreadcrumbList", "@id": url + '#breadcrumb', "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + '/'},
-            {"@type": "ListItem", "position": 2, "name": crumb, "item": url}]})
+        graph.append({
+            "@type": "BreadcrumbList",
+            "@id": url + '#breadcrumb',
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + '/'},
+                {"@type": "ListItem", "position": 2, "name": crumb, "item": url}
+            ]
+        })
     service_pages = {
         'website-development.html': ('Website development', 'Custom business websites, landing pages, portfolio sites and e-commerce experiences.'),
         'app-development.html': ('Web and mobile app development', 'Web applications, dashboards, portals, custom tools and MVPs.'),
@@ -77,42 +161,131 @@ def build_block(file, path, ptype, crumb, title, desc):
     }
     if file in service_pages:
         n, d = service_pages[file]
-        page['mainEntity'] = {'@type': 'Service', 'name': n, 'description': d, 'provider': {'@id': org_id}, 'serviceType': n}
+        page['mainEntity'] = {
+            '@type': 'Service',
+            'name': n,
+            'description': d,
+            'provider': {'@id': org_id},
+            'serviceType': n,
+            'areaServed': 'Worldwide'
+        }
     if file == 'capabilities.html':
-        page["mainEntity"] = {"@type": "ItemList", "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "item": {"@type": "Service", "name": n, "description": d,
-             "provider": {"@id": org_id}, "serviceType": n}} for i, (n, d) in enumerate(SERVICES)]}
+        page["mainEntity"] = {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "item": {
+                        "@type": "Service",
+                        "name": n,
+                        "description": d,
+                        "url": s_url,
+                        "provider": {"@id": org_id},
+                        "serviceType": n
+                    }
+                } for i, (n, d, s_url) in enumerate(SERVICES)
+            ]
+        }
     if file == 'work.html' and projects:
-        page["mainEntity"] = {"@type": "ItemList", "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "item": {"@type": "CreativeWork", "name": p['title'],
-             "description": p['desc'], "creator": {"@id": org_id}, **({"url": p['url']} if p['url'] else {})}}
-            for i, p in enumerate(projects)]}
+        page["mainEntity"] = {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "item": {
+                        "@type": "CreativeWork",
+                        "name": p['title'],
+                        "description": p['desc'],
+                        "creator": {"@id": org_id},
+                        **({"url": p['url']} if p['url'] else {})
+                    }
+                } for i, p in enumerate(projects)
+            ]
+        }
     graph.append(page)
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=1, ensure_ascii=False)
-    return (f'<!--seo:start-->\n<link rel="canonical" href="{url}">\n'
-            f'<meta property="og:url" content="{url}">\n'
-            f'<meta property="og:image" content="{SITE}/images/og-image.jpg">\n'
-            f'<meta name="twitter:image" content="{SITE}/images/og-image.jpg">\n'
-            f'<script type="application/ld+json">\n{ld}\n</script>\n<!--seo:end-->')
+    return (
+        f'<!--seo:start-->\n'
+        f'<link rel="canonical" href="{url}">\n'
+        f'<meta property="og:url" content="{url}">\n'
+        f'<meta property="og:title" content="{title}">\n'
+        f'<meta property="og:description" content="{desc}">\n'
+        f'<meta property="og:image" content="{SITE}/images/og-image.jpg">\n'
+        f'<meta name="twitter:title" content="{title}">\n'
+        f'<meta name="twitter:description" content="{desc}">\n'
+        f'<meta name="twitter:image" content="{SITE}/images/og-image.jpg">\n'
+        f'<script type="application/ld+json">\n{ld}\n</script>\n'
+        f'<!--seo:end-->'
+    )
 
-for file, path, ptype, crumb in PAGES:
+FAVICON_BLOCK = (
+    '<link rel="icon" href="/favicon.ico" sizes="any">\n'
+    '<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">\n'
+    '<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">\n'
+    '<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">\n'
+    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">\n'
+    '<link rel="manifest" href="/site.webmanifest">\n'
+    '<meta name="msapplication-TileColor" content="#0a0f1f">'
+)
+
+for file, path, ptype, crumb, priority, changefreq in PAGES:
     p = ROOT / file
+    if not p.exists():
+        continue
     h = p.read_text(encoding='utf-8')
-    title = re.search(r'<title>(.*?)</title>', h, re.S).group(1).strip()
-    desc = re.search(r'<meta name="description" content="(.*?)"', h).group(1)
-    # the static, domain-free Organization block is replaced by the full graph
+    title_match = re.search(r'<title>(.*?)</title>', h, re.S)
+    title = title_match.group(1).strip() if title_match else 'VIRELEO'
+    desc_match = re.search(r'<meta name="description" content="(.*?)"', h)
+    desc = desc_match.group(1).strip() if desc_match else ''
+
+    # Clean legacy static Organization block if any
     h = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://schema.org",\s*"@type": "Organization".*?</script>\s*', '', h, count=1, flags=re.S)
+
+    # Standardize favicon links
+    h = re.sub(
+        r'<link rel="(?:shortcut )?icon".*?>\s*(?:<link rel="icon".*?>\s*)*(?:<link rel="apple-touch-icon".*?>\s*)*(?:<link rel="manifest".*?>\s*)*(?:<meta name="msapplication-TileColor".*?>\s*)?',
+        FAVICON_BLOCK + '\n',
+        h,
+        count=1,
+        flags=re.S
+    )
+
+    # Build and insert SEO block
     block = build_block(file, path, ptype, crumb, title, desc)
     if '<!--seo:start-->' in h:
         h = re.sub(r'<!--seo:start-->.*?<!--seo:end-->', lambda m: block, h, count=1, flags=re.S)
     else:
         h = h.replace('</head>', block + '\n</head>', 1)
+
     p.write_text(h, encoding='utf-8')
     print('updated', file)
 
-urls = ''.join(f'  <url><loc>{SITE}{path}</loc><lastmod>{TODAY}</lastmod></url>\n' for _, path, _, _ in PAGES)
-(ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n', encoding='utf-8')
+# Generate Sitemap with proper XML namespaces, priorities, and changefreq
+sitemap_urls = []
+for file, path, _, _, priority, changefreq in PAGES:
+    url_entry = (
+        f'  <url>\n'
+        f'    <loc>{SITE}{path}</loc>\n'
+        f'    <lastmod>{TODAY}</lastmod>\n'
+        f'    <changefreq>{changefreq}</changefreq>\n'
+        f'    <priority>{priority}</priority>\n'
+        f'  </url>\n'
+    )
+    sitemap_urls.append(url_entry)
+
+sitemap_xml = (
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + ''.join(sitemap_urls)
+    + '</urlset>\n'
+)
+(ROOT / 'sitemap.xml').write_text(sitemap_xml, encoding='utf-8')
+
+# Ensure robots.txt points to correct sitemap
 r = (ROOT / 'robots.txt').read_text(encoding='utf-8')
 r = re.sub(r'^#?\s*Sitemap:.*$', '', r, flags=re.M).rstrip() + f'\n\nSitemap: {SITE}/sitemap.xml\n'
 (ROOT / 'robots.txt').write_text(r, encoding='utf-8')
-print('sitemap.xml + robots.txt written for', SITE)
+
+print('sitemap.xml and robots.txt successfully updated for', SITE)
