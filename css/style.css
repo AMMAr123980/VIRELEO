@@ -199,6 +199,9 @@ button { font-family: inherit; }
 
 /* Work: cards ------------------------------------------------------------- */
 .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 28px; }
+.card-grid[data-count="3"], .card-grid:has(> :nth-child(3)) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 22px; }
+.card-grid[data-count="3"] .card h3, .card-grid:has(> :nth-child(3)) .card h3 { font-size: 1.35rem; }
+.card-grid[data-count="3"] .card p, .card-grid:has(> :nth-child(3)) .card p { font-size: 0.95rem; }
 .card { display: flex; flex-direction: column; }
 .card .thumb { aspect-ratio: 16 / 10; }
 .card h3 { margin-top: 22px; font-size: 1.5rem; }
@@ -337,7 +340,7 @@ button { font-family: inherit; }
   .main-nav.is-open { opacity: 1; visibility: visible; transform: none; }
   .main-nav > a:not(.btn) { padding: 18px 0; border-bottom: 1px solid var(--line); }
   .main-nav .btn { margin-top: 20px; }
-  .services-grid, .card-grid { grid-template-columns: 1fr; }
+  .services-grid, .card-grid, .card-grid[data-count="3"], .card-grid:has(> :nth-child(3)) { grid-template-columns: 1fr; }
   .caps-inner { grid-template-columns: 1fr; }
   .caps-rail { grid-auto-flow: column; border-left: 0; justify-content: center; }
   .caps-rail button { border-left: 0; border-bottom: 2px solid transparent; padding: 8px 12px; margin: 0; }
@@ -909,6 +912,10 @@ body { padding-bottom: 0; }
 .pinw .work-panel .card p { margin-top: 6px; font-size: .95rem; }
 .pinw .work-panel .card-foot { margin-top: 12px; padding-top: 12px; }
 .pinw .card-grid { gap: 20px 28px; }
+.pinw .card-grid[data-count="3"], .pinw .card-grid:has(> :nth-child(3)) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 18px; }
+.pinw .card-grid[data-count="3"] .card h3, .pinw .card-grid:has(> :nth-child(3)) .card h3 { margin-top: 10px; font-size: 1.15rem; }
+.pinw .card-grid[data-count="3"] .card p, .pinw .card-grid:has(> :nth-child(3)) .card p { margin-top: 4px; font-size: 0.88rem; }
+.pinw .card-grid[data-count="3"] .card-foot, .pinw .card-grid:has(> :nth-child(3)) .card-foot { margin-top: 10px; padding-top: 10px; }
 
 /* Faster start: shorter curtain and entrance delays */
 .js .curtain { animation: curtainIn .7s var(--ease-io) .1s forwards; }

@@ -404,7 +404,9 @@ const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke
         t.setAttribute("aria-selected", String(t.dataset.cat === k));
         t.classList.toggle("is-past", n < idx);
       });
-      out.innerHTML = PROJECTS.filter((p) => p.cat === k).map(card).join("");
+      const list = PROJECTS.filter((p) => p.cat === k);
+      out.dataset.count = list.length;
+      out.innerHTML = list.map(card).join("");
       scan(out);
     };
     $$(".tab", tabs).forEach((t) => t.addEventListener("click", () => pick(t.dataset.cat)));
