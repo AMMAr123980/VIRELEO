@@ -39,4 +39,4 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-Sitemap: https://vireleo.me/sitemap.xml
+Sitemap: https://www.vireleo.me/sitemap.xml
