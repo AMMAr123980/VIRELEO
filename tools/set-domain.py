@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
-Enhanced SEO & Schema Automation for VIRELEO
+Advanced SEO, AEO & GEO Automation for VIRELEO
 Run with:
     python tools/set-domain.py https://vireleo.me
 
 Features:
-- Validated Google Search Favicon setup (48x48, 192x192, 512x512, ICO, Apple Touch Icon)
-- Standardized Open Graph & Twitter Card tags per page
-- Advanced JSON-LD Schema: Organization, ProfessionalService, WebSite, WebPage, BreadcrumbList, OfferCatalog, Services, ItemList
-- Dynamic, Google-compliant XML Sitemap with priorities and changefreq
-- AI and Search Engine friendly robots.txt
+- Absolute Google Search Favicon priority tags (48x48 primary, 192x192, 512x512, shortcut icon)
+- AEO / GEO Entity Grounding (Wikipedia / Wikidata entity definitions in knowsAbout)
+- SpeakableSpecification for AI engines and voice answer queries
+- Standardized Open Graph & Twitter Card metadata per page
+- Rich Schema: Organization, ProfessionalService, WebSite, WebPage, BreadcrumbList, OfferCatalog, Services, ItemList
+- Dynamic Google-compliant XML Sitemap with priorities and changefreq
+- Explicit Googlebot & Googlebot-Favicon permissions in robots.txt
 """
 import sys, re, json, datetime, pathlib
 
@@ -90,14 +92,16 @@ org = {
         }
     ],
     "knowsAbout": [
-        "Custom website development",
-        "Mobile app development",
-        "AI workflow automation",
-        "AI chatbots",
-        "WhatsApp automation",
-        "Instagram messaging automation",
-        "Web applications",
-        "SaaS MVP development"
+        {"@type": "DefinedTerm", "name": "Web Development", "sameAs": "https://en.wikipedia.org/wiki/Web_development"},
+        {"@type": "DefinedTerm", "name": "Artificial Intelligence", "sameAs": "https://en.wikipedia.org/wiki/Artificial_intelligence"},
+        {"@type": "DefinedTerm", "name": "Chatbot", "sameAs": "https://en.wikipedia.org/wiki/Chatbot"},
+        {"@type": "DefinedTerm", "name": "Business Process Automation", "sameAs": "https://en.wikipedia.org/wiki/Business_process_automation"},
+        {"@type": "DefinedTerm", "name": "Mobile App Development", "sameAs": "https://en.wikipedia.org/wiki/Mobile_app_development"},
+        "Custom Web Applications",
+        "WhatsApp Automation",
+        "Instagram Messaging Automation",
+        "SaaS MVP Development",
+        "Digital Engineering Studio"
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -141,6 +145,10 @@ def build_block(file, path, ptype, crumb, title, desc):
         "primaryImageOfPage": {
             "@type": "ImageObject",
             "url": SITE + '/images/og-image.jpg'
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".hero2-lead", ".section-title", "h2"]
         }
     }
     if crumb:
@@ -221,13 +229,14 @@ def build_block(file, path, ptype, crumb, title, desc):
     )
 
 FAVICON_BLOCK = (
-    '<link rel="icon" href="/favicon.ico" sizes="any">\n'
-    '<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">\n'
-    '<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">\n'
-    '<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">\n'
-    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">\n'
-    '<link rel="manifest" href="/site.webmanifest">\n'
-    '<meta name="msapplication-TileColor" content="#0a0f1f">'
+    f'<link rel="icon" type="image/png" sizes="48x48" href="{SITE}/favicon-48.png">\n'
+    f'<link rel="icon" type="image/png" sizes="192x192" href="{SITE}/icon-192.png">\n'
+    f'<link rel="icon" type="image/png" sizes="512x512" href="{SITE}/icon-512.png">\n'
+    f'<link rel="shortcut icon" href="{SITE}/favicon.ico">\n'
+    f'<link rel="icon" href="{SITE}/favicon.ico" sizes="any">\n'
+    f'<link rel="apple-touch-icon" sizes="180x180" href="{SITE}/apple-touch-icon.png">\n'
+    f'<link rel="manifest" href="/site.webmanifest">\n'
+    f'<meta name="msapplication-TileColor" content="#0a0f1f">'
 )
 
 for file, path, ptype, crumb, priority, changefreq in PAGES:
@@ -243,9 +252,9 @@ for file, path, ptype, crumb, priority, changefreq in PAGES:
     # Clean legacy static Organization block if any
     h = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://schema.org",\s*"@type": "Organization".*?</script>\s*', '', h, count=1, flags=re.S)
 
-    # Standardize favicon links
+    # Standardize favicon links with absolute URLs
     h = re.sub(
-        r'<link rel="(?:shortcut )?icon".*?>\s*(?:<link rel="icon".*?>\s*)*(?:<link rel="apple-touch-icon".*?>\s*)*(?:<link rel="manifest".*?>\s*)*(?:<meta name="msapplication-TileColor".*?>\s*)?',
+        r'<link rel="(?:shortcut )?icon".*?>\s*(?:<link rel="(?:shortcut )?icon".*?>\s*)*(?:<link rel="apple-touch-icon".*?>\s*)*(?:<link rel="manifest".*?>\s*)*(?:<meta name="msapplication-TileColor".*?>\s*)?',
         FAVICON_BLOCK + '\n',
         h,
         count=1,
@@ -283,8 +292,10 @@ sitemap_xml = (
 )
 (ROOT / 'sitemap.xml').write_text(sitemap_xml, encoding='utf-8')
 
-# Ensure robots.txt points to correct sitemap
+# Ensure robots.txt points to correct sitemap and allows Googlebot-Favicon
 r = (ROOT / 'robots.txt').read_text(encoding='utf-8')
+if 'Googlebot-Favicon' not in r:
+    r = re.sub(r'(User-agent: Googlebot\s*\nAllow: /)', r'\1\n\nUser-agent: Googlebot-Favicon\nAllow: /', r)
 r = re.sub(r'^#?\s*Sitemap:.*$', '', r, flags=re.M).rstrip() + f'\n\nSitemap: {SITE}/sitemap.xml\n'
 (ROOT / 'robots.txt').write_text(r, encoding='utf-8')
 
