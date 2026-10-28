@@ -2,6 +2,7 @@ import glob
 import re
 
 DIMENSIONS = {
+    'images/projects/appliory.jpg': (1200, 900),
     'images/projects/ammar-portfolio.jpg': (1200, 900),
     'images/projects/lean-canvas-model.jpg': (1200, 900),
     'images/projects/ai-employee-os.jpg': (1200, 900),

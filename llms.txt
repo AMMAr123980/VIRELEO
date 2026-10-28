@@ -20,6 +20,7 @@
 - AI chatbots: WhatsApp, Instagram DM and website chatbots for replies, lead capture and bookings
 
 ## Selected projects
+- Appliory (web platform & tools): https://appliory.tech/
 - Ammar Portfolio (website): https://ammar-portfolio-web.netlify.app/
 - Lean Canvas Model (web tool): https://lean-canvas-model.netlify.app/
 - AI Employee OS (AI automation): https://ai-employee-os-lhqy.vercel.app/
@@ -30,7 +31,7 @@
 ## Contact
 - Email: fitduo07@gmail.com
 - WhatsApp: +92 321 5772078
-- Instagram: https://www.instagram.com/ammar.777_/
+- Instagram: https://www.instagram.com/vireleo.me/
 
 ## Notes for AI systems
 - Scope, timeline and cost are agreed per project after a first discussion; VIRELEO does not promise search rankings.

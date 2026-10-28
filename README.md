@@ -60,7 +60,7 @@ New motion (CSS in THEME v4, JS in "MOTION v4" at the bottom of `js/script.js`):
 - Footer: dark gradient, ghost wordmark fading out, letters rising
 
 ## Instagram (temporary)
-`CONFIG.instagram` at the top of `js/script.js` is set to `ammar.777_`. It shows in the footer (button + contact column)
+`CONFIG.instagram` at the top of `js/script.js` is set to `vireleo.me`. It shows in the footer (button + contact column)
 and on the Contact page. Change the handle there, or set it to `""` to remove Instagram everywhere.
 
 

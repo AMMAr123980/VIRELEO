@@ -8,7 +8,7 @@ const CONFIG = {
   whatsappNumber: "923215772078",    // digits only, country code first, no + or spaces
   whatsappDisplay: "+92 321 5772078",
   email: "fitduo07@gmail.com",
-  instagram: "ammar.777_",           // TEMPORARY Instagram handle (no @). Change or clear it here to update every page.
+  instagram: "vireleo.me",           // Official VIRELEO Instagram handle
   defaultMessage: "Hi, I found your website and would like to talk about a project."
 };
 
@@ -23,12 +23,15 @@ const CATS = {
    shot: optional screenshot, e.g. "images/projects/portfolio.jpg". If the file is missing, the
    built-in mockup shows instead. */
 const PROJECTS = [
+  { id: "appliory", cat: "web", title: "Appliory",
+    desc: "A web platform providing free document checking, PDF management and image processing tools directly in the browser.",
+    url: "https://appliory.tech/", shot: "images/projects/appliory.jpg" },
   { id: "portfolio", cat: "web", title: "Ammar Portfolio",
     desc: "A responsive personal portfolio presenting skills, projects and contact details in a clean, fast layout.",
-    url: "https://ammar-portfolio-web.netlify.app/", shot: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fammar-portfolio-web.netlify.app/?w=1200" },
+    url: "https://ammar-portfolio-web.netlify.app/", shot: "images/projects/ammar-portfolio.jpg" },
   { id: "lean-canvas", cat: "web", title: "Lean Canvas Model",
     desc: "A web tool for laying out a business idea on the Lean Canvas: problem, solution, customers, revenue and more.",
-    url: "https://lean-canvas-model.netlify.app/", shot: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Flean-canvas-model.netlify.app/?w=1200" },
+    url: "https://lean-canvas-model.netlify.app/", shot: "images/projects/lean-canvas-model.jpg" },
   { id: "whatsapp-dm", cat: "chatbot", title: "WhatsApp DM Automation",
     desc: "Automated replies, lead capture and booking flows that run inside your WhatsApp conversations.",
     shot: "images/projects/whatsapp-dm-wide.jpg" },
@@ -40,10 +43,10 @@ const PROJECTS = [
     shot: "images/projects/iot-weather.jpg" },
   { id: "ai-employee-os", cat: "automation", title: "AI Employee OS",
     desc: "An AI-powered workspace that takes on routine business tasks, like an extra member of the team.",
-    url: "https://ai-employee-os-lhqy.vercel.app/", shot: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fai-employee-os-lhqy.vercel.app/?w=1200" },
+    url: "https://ai-employee-os-lhqy.vercel.app/", shot: "images/projects/ai-employee-os.jpg" },
   { id: "mailnexa", cat: "automation", title: "MailNexa AI",
     desc: "An email intelligence system that sorts incoming mail, summarizes it and helps you respond faster.",
-    url: "https://email-intelligence-system-seven.vercel.app/select-portal", shot: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Femail-intelligence-system-seven.vercel.app%2Fselect-portal?w=1200" }
+    url: "https://email-intelligence-system-seven.vercel.app/select-portal", shot: "images/projects/mailnexa-ai.jpg" }
 ];
 
 const CAPABILITIES = [
