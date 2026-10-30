@@ -9,6 +9,7 @@ const CONFIG = {
   whatsappDisplay: "+92 321 5772078",
   email: "fitduo07@gmail.com",
   instagram: "vireleo.me",           // Official VIRELEO Instagram handle
+  linkedin: "https://www.linkedin.com/in/vireleo-806625322/", // Official VIRELEO LinkedIn profile
   defaultMessage: "Hi, I found your website and would like to talk about a project."
 };
 
@@ -84,6 +85,11 @@ const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke
     a.href = "https://www.instagram.com/" + CONFIG.instagram + "/";
   });
   $$("[data-ig-text]").forEach((el) => (el.textContent = "@" + CONFIG.instagram));
+  $$("[data-li]").forEach((a) => {
+    if (!CONFIG.linkedin) { (a.closest(".direct-item") || a).remove(); return; }
+    a.href = CONFIG.linkedin;
+  });
+  $$("[data-li-text]").forEach((el) => (el.textContent = "VIRELEO"));
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
   document.title = document.title.replace("VIRELEO", CONFIG.brand);
 
@@ -219,6 +225,7 @@ const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke
   /* Mobile menu ------------------------------------------------------------------ */
   const toggle = $("#menuToggle"), nav = $("#mainNav");
   const igUrl = CONFIG.instagram ? "https://instagram.com/" + CONFIG.instagram : "";
+  const liUrl = CONFIG.linkedin || "";
   const fs = document.createElement("div");
   fs.className = "fsmenu"; fs.id = "fsMenu"; fs.setAttribute("role", "dialog"); fs.setAttribute("aria-modal", "true"); fs.setAttribute("aria-label", "Site menu"); fs.hidden = true;
   const links = [["Home","index.html"],["Services","index.html#services"],["Work","work.html"],["Capabilities","capabilities.html"],["About","about.html"],["Contact","contact.html"]];
@@ -230,8 +237,10 @@ const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke
     '</nav><div class="fs-side"><div class="fs-col" style="--i:2"><p>Services</p>' +
     '<a href="work.html?cat=web">Web Development</a><a href="work.html?cat=app">App Development</a><a href="work.html?cat=automation">AI Automation</a><a href="work.html?cat=chatbot">AI Chatbot Development</a></div>' +
     '<div class="fs-col" style="--i:4"><p>Contact</p><a href="mailto:' + esc(CONFIG.email) + '">' + esc(CONFIG.email) + '</a><a href="' + waLink(CONFIG.defaultMessage) + '" target="_blank" rel="noopener">WhatsApp ' + esc(CONFIG.whatsappDisplay) + '</a></div>' +
+    '<div class="fs-socials" style="display:flex;gap:16px;align-items:center;">' +
     (igUrl ? '<a class="fs-ig" style="--i:5" href="' + igUrl + '" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igG" cx="20%" cy="104%" r="130%"><stop offset="0" stop-color="#fdf497"/><stop offset=".08" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset="1" stop-color="#285AEB"/></radialGradient></defs><rect width="64" height="64" rx="18" fill="url(#igG)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="32" cy="32" r="8.4" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="43" cy="21" r="2.4" fill="#fff"/></svg></a>' : "") +
-    '</div></div>';
+    (liUrl ? '<a class="fs-li" style="--i:6" href="' + liUrl + '" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#0A66C2"/><path d="M19 25h7v21h-7zM22.5 16.5a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4zM31 25h6.6v2.9h.1c.9-1.8 3.2-3.7 6.6-3.7 7.1 0 8.4 4.7 8.4 10.7V46h-7V35.2c0-2.6 0-5.9-3.6-5.9-3.6 0-4.2 2.8-4.2 5.7V46H31z" fill="#fff"/></svg></a>' : "") +
+    '</div></div></div>';
   document.body.appendChild(fs);
   let fsTimer = 0;
   const setMenu = (open) => {

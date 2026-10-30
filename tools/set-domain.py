@@ -77,9 +77,13 @@ org = {
         "@type": "Person",
         "name": "Ammar Hassan Malik",
         "jobTitle": "Founder & Lead Engineer",
-        "sameAs": ["https://www.instagram.com/vireleo.me/"]
+        "sameAs": [
+            "https://www.linkedin.com/in/vireleo-806625322/",
+            "https://www.instagram.com/vireleo.me/"
+        ]
     },
     "sameAs": [
+        "https://www.linkedin.com/in/vireleo-806625322/",
         "https://www.instagram.com/vireleo.me/"
     ],
     "contactPoint": [

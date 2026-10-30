@@ -1391,9 +1391,9 @@ html { scroll-behavior: auto; }
 @media (min-width: 861px) { .site-header .main-nav .btn-sm { right: 7px; } }
 .fs-links a span { font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.15; }
 .fs-links a { padding: 16px 0 16px 8px; }
-.fs-ig { border: 0; background: none; width: 64px; height: 64px; }
-.fs-ig svg { width: 100%; height: 100%; }
-.fs-ig:hover { background: none; transform: scale(1.08); }
+.fs-ig, .fs-li { border: 0; background: none; width: 56px; height: 56px; display: inline-block; transition: transform .25s var(--ease); }
+.fs-ig svg, .fs-li svg { width: 100%; height: 100%; border-radius: 16px; }
+.fs-ig:hover, .fs-li:hover { background: none; transform: scale(1.08); }
 
 /* v18 — capabilities: fuller layout (labelled number rail, ghost number, eyebrow, tags, grid backdrop) */
 .caps::before {
