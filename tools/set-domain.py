@@ -101,10 +101,14 @@ org = {
         {"@type": "DefinedTerm", "name": "Chatbot", "sameAs": "https://en.wikipedia.org/wiki/Chatbot"},
         {"@type": "DefinedTerm", "name": "Business Process Automation", "sameAs": "https://en.wikipedia.org/wiki/Business_process_automation"},
         {"@type": "DefinedTerm", "name": "Mobile App Development", "sameAs": "https://en.wikipedia.org/wiki/Mobile_app_development"},
+        "AI Web Development Agency",
         "Custom Web Applications",
+        "AI Workflow Automation",
         "WhatsApp Automation",
         "Instagram Messaging Automation",
         "SaaS MVP Development",
+        "Full-Stack Web Engineering",
+        "LLM & API Integrations",
         "Digital Engineering Studio"
     ],
     "hasOfferCatalog": {
