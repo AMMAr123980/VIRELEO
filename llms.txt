@@ -1,6 +1,6 @@
 # VIRELEO
 
-> VIRELEO is a digital engineering studio that builds custom-coded websites, mobile and web apps, AI workflow automation and AI chatbots (WhatsApp, Instagram and website) for businesses. Work is hand-written, built around the client's workflow, and handed over with readable, documented code.
+> VIRELEO is an AI web development agency and digital engineering studio that builds custom-coded websites, high-performance web applications, mobile apps, SaaS MVPs, and AI workflow automation systems. Work is 100% hand-crafted, built around the client's workflow, and handed over with clean, readable, documented code.
 
 ## Pages
 - [Home](/): overview of services, selected work and answers to common questions
