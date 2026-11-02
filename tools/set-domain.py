@@ -227,6 +227,46 @@ def build_block(file, path, ptype, crumb, title, desc):
             ]
         }
     graph.append(page)
+    if file == 'index.html':
+        graph.append({
+            "@type": "FAQPage",
+            "@id": url + '#faq',
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": item["q"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": item["a"]
+                    }
+                } for item in [
+                    {
+                        "q": "How do I hire VIRELEO for custom web development and web app engineering?",
+                        "a": "To hire VIRELEO for custom website or web application development, share your project requirements through our Contact page. We review your technical specifications, architecture, and timeline to deliver custom-coded software built from scratch without page builders or WordPress plugins."
+                    },
+                    {
+                        "q": "What services does an AI automation agency provide for businesses?",
+                        "a": "As an AI automation agency, VIRELEO builds autonomous business workflows, CRM integrations, API data pipelines, automated lead routing, and document processing systems that eliminate repetitive manual tasks and accelerate operations."
+                    },
+                    {
+                        "q": "Can you build custom AI chatbots for WhatsApp and Instagram DM automation?",
+                        "a": "Yes. VIRELEO develops intelligent custom AI chatbots integrated directly with official Meta APIs for WhatsApp and Instagram. Our bots deliver 24/7 customer support, capture and qualify leads, answer product questions, and sync user data seamlessly into your CRM."
+                    },
+                    {
+                        "q": "How much does custom web development or SaaS MVP engineering cost?",
+                        "a": "Custom software development and SaaS MVP engineering costs depend on feature scope, technical complexity, database design, and third-party integrations. VIRELEO provides transparent fixed-scope proposals, phased milestone delivery, and complete source code ownership."
+                    },
+                    {
+                        "q": "Why choose custom-coded web applications over WordPress or Webflow?",
+                        "a": "Custom-coded applications deliver sub-second loading speeds, perfect 100 Core Web Vitals, enterprise-grade security without third-party plugin vulnerabilities, and complete architectural freedom tailored strictly to your business logic and scaling needs."
+                    },
+                    {
+                        "q": "How long does it take to develop a custom website, mobile app, or AI solution?",
+                        "a": "Most standard business websites and AI chatbots launch within 1 to 2 weeks. Comprehensive full-stack web applications and SaaS MVPs typically require 3 to 6 weeks, structured with transparent milestone demos and full codebase handover."
+                    }
+                ]
+            ]
+        })
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=1, ensure_ascii=False)
     return (
         f'<!--seo:start-->\n'

@@ -649,7 +649,8 @@ h1, h2, h3 { letter-spacing: -0.035em; }
 .mega::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
 .has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: none; filter: none; }
 .mega-col { display: flex; flex-direction: column; gap: 4px; }
-.mega-col .mono { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); margin: 0 0 10px; }
+.mega-col .mono, .mega-col a.mono { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); margin: 0 0 10px; display: inline-flex; align-items: center; padding: 0; text-decoration: none; font-weight: 600; }
+.mega-col a.mono:hover { color: #fff; text-decoration: underline; translate: none; }
 .mega-col a { color: rgba(255,255,255,.75); text-decoration: none; padding: 7px 0; font-size: .95rem; opacity: 0; transform: translateY(8px); transition: color .25s, translate .3s var(--ease), opacity .4s var(--ease), transform .5s var(--ease); }
 .has-mega:hover .mega-col a, .has-mega:focus-within .mega-col a { opacity: 1; transform: none; }
 .mega-col a:nth-of-type(1) { transition-delay: 0s, 0s, .06s, .06s; } .mega-col a:nth-of-type(2) { transition-delay: 0s, 0s, .11s, .11s; }
