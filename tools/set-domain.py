@@ -31,6 +31,11 @@ PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
     ('work.html', '/work.html', 'CollectionPage', 'Work', '0.8', 'weekly'),
     ('capabilities.html', '/capabilities.html', 'CollectionPage', 'Capabilities', '0.8', 'monthly'),
     ('about.html', '/about.html', 'AboutPage', 'About', '0.7', 'monthly'),
+    ('blog.html', '/blog.html', 'CollectionPage', 'Blog', '0.85', 'weekly'),
+    ('blog-cost-to-build-saas-mvp.html', '/blog-cost-to-build-saas-mvp.html', 'BlogPosting', 'SaaS MVP Cost', '0.85', 'monthly'),
+    ('blog-custom-code-vs-wordpress.html', '/blog-custom-code-vs-wordpress.html', 'BlogPosting', 'Custom Code vs WordPress', '0.85', 'monthly'),
+    ('blog-whatsapp-instagram-ai-chatbot-guide.html', '/blog-whatsapp-instagram-ai-chatbot-guide.html', 'BlogPosting', 'WhatsApp & Instagram AI Bots', '0.85', 'monthly'),
+    ('blog-ai-workflow-automation-guide.html', '/blog-ai-workflow-automation-guide.html', 'BlogPosting', 'AI Workflow Automation', '0.85', 'monthly'),
     ('contact.html', '/contact.html', 'ContactPage', 'Contact', '0.8', 'monthly'),
 ]
 
@@ -191,6 +196,18 @@ def build_block(file, path, ptype, crumb, title, desc):
             'serviceType': n,
             'areaServed': 'Worldwide'
         }
+    if ptype == 'BlogPosting':
+        page["headline"] = title
+        page["author"] = {
+            "@type": "Person",
+            "name": "Ammar Hassan Malik",
+            "jobTitle": "Founder & Lead Engineer",
+            "url": SITE + "/about.html"
+        }
+        page["publisher"] = {"@id": org_id}
+        page["datePublished"] = "2026-11-01"
+        page["dateModified"] = TODAY
+
     if file == 'capabilities.html':
         page["mainEntity"] = {
             "@type": "ItemList",
