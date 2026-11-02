@@ -2307,3 +2307,10 @@ body:has(.wa.is-visible) .vid-fab { bottom: 80px; }
   .article-layout { padding: 36px 18px 60px; }
   .article-cta-box { padding: 28px 20px; }
 }
+
+/* Footer contact links with real icons */
+.fc-item { display: inline-flex; align-items: center; gap: 9px; }
+.fc-item .fc-ic { width: 17px; height: 17px; flex: 0 0 17px; vertical-align: middle; }
+.fact-link .fact-ic { width: 20px; height: 20px; flex: 0 0 20px; vertical-align: middle; }
+.socials .pill { gap: 8px; }
+.socials .pill svg { width: 18px; height: 18px; flex: 0 0 18px; }
