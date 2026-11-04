@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  /* Consent Mode v2 — defaults denied for EEA; granted elsewhere */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage':        'denied',
+    'ad_user_data':      'denied',
+    'ad_personalization':'denied',
+    'analytics_storage': 'denied',
+    'region': ['AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GR',
+               'HR','HU','IE','IT','LT','LU','LV','MT','NL','PL','PT','RO',
+               'SE','SI','SK','GB','IS','LI','NO','CH']
+  });
+  /* For all other regions — grant by default */
+  gtag('consent', 'default', {
+    'ad_storage':        'granted',
+    'ad_user_data':      'granted',
+    'ad_personalization':'granted',
+    'analytics_storage': 'granted'
+  });
+  /* Restore saved choice immediately on page load */
+  (function(){
+    var s = localStorage.getItem('vireleo_consent');
+    if(s === 'granted'){
+      gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted',
+        'ad_personalization':'granted','analytics_storage':'granted'
+      });
+    } else if(s === 'denied'){
+      gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied',
+        'ad_personalization':'denied','analytics_storage':'denied'
+      });
+    }
+  })();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ4RGNEYY8"></script>
 <script>
@@ -363,5 +399,36 @@
   };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+
+<!-- Cookie Consent Banner -->
+<div id="cc-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0c1222;color:#fff;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.12);font-family:Inter,sans-serif;font-size:.88rem;line-height:1.5">
+  <p style="margin:0;flex:1;min-width:200px">We use cookies and analytics to improve your experience and measure site performance. <a href="#" style="color:#1fc6d6;text-decoration:underline">Learn more</a>.</p>
+  <div style="display:flex;gap:10px;flex-shrink:0">
+    <button id="cc-deny"   style="padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;cursor:pointer;font-size:.85rem">Decline</button>
+    <button id="cc-accept" style="padding:9px 20px;border-radius:999px;border:none;background:linear-gradient(90deg,#1fc6d6,#477bff);color:#fff;cursor:pointer;font-size:.85rem;font-weight:600">Accept all</button>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('cc-banner');
+  var saved  = localStorage.getItem('vireleo_consent');
+  if(!saved) banner.style.display = 'flex';
+
+  function updateConsent(choice){
+    gtag('consent','update',{
+      'ad_storage':        choice,
+      'ad_user_data':      choice,
+      'ad_personalization':choice,
+      'analytics_storage': choice
+    });
+    localStorage.setItem('vireleo_consent', choice);
+    banner.style.display = 'none';
+  }
+
+  document.getElementById('cc-accept').addEventListener('click', function(){ updateConsent('granted'); });
+  document.getElementById('cc-deny').addEventListener('click',   function(){ updateConsent('denied');  });
+})();
+</script>
+<!-- End Cookie Consent Banner -->
 </body>
 </html>
