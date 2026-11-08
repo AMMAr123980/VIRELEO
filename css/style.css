@@ -1014,6 +1014,8 @@ html { scroll-behavior: auto; }
 .faq-section .faq-item p{color:#626b88}
 .faq-section .faq-item summary:after{color:#5b45f0}
 .faq-section .faq-item summary:focus-visible{outline-color:#6a3df0}
+.faq-section .faq-item h3{color:#0b1329 !important;margin-bottom:8px}
+.faq-section .faq-item p{color:#3e4c66 !important;line-height:1.7}
 .site-header .brand svg.vireleo-mark{width:34px;height:34px;flex:0 0 34px;overflow:visible}
 .brand-name{letter-spacing:.035em}
 
