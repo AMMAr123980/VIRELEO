@@ -287,6 +287,38 @@ def build_block(file, path, ptype, crumb, title, desc):
             ]
         })
 
+    if file == 'about.html':
+        graph.append({
+            "@type": "FAQPage",
+            "@id": url + '#faq',
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is VIRELEO?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "VIRELEO is an AI-native digital engineering studio founded by Ammar Hassan Malik. We specialize in custom-coded website development, scalable web applications, SaaS MVPs, AI workflow automation, and intelligent WhatsApp chatbots."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Who does VIRELEO work with?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We partner with early-stage startups, SaaS founders, and growing enterprises worldwide looking for high-performance software engineering without bloated page builders, agency layers, or recurring platform licenses."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does VIRELEO engineer digital products?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Every project follows a structured 4-phase agile engineering process: Discovery & Architecture (Week 1), UI & Core Feature Engineering (Weeks 2-3), API & Payment Integrations (Week 4), and Quality Assurance Handover with 100% source code ownership."
+                    }
+                }
+            ]
+        })
+
     if file == 'capabilities.html':
         page["mainEntity"] = {
             "@type": "ItemList",
