@@ -206,8 +206,14 @@ def build_block(file, path, ptype, crumb, title, desc):
         "name": title,
         "description": desc,
         "inLanguage": "en",
-        "isPartOf": {"@id": site_id},
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": site_id,
+            "url": SITE + '/',
+            "name": "VIRELEO"
+        },
         "about": {"@id": org_id},
+        "mainEntity": {"@id": org_id},
         "primaryImageOfPage": {
             "@type": "ImageObject",
             "url": SITE + '/images/og-image.jpg'
