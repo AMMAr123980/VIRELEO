@@ -13,7 +13,7 @@ Features:
 - Dynamic Google-compliant XML Sitemap with priorities and changefreq
 - Explicit Googlebot & Googlebot-Favicon permissions in robots.txt
 """
-import sys, re, json, datetime, pathlib
+import sys, re, json, datetime, pathlib, html
 
 if len(sys.argv) != 2 or not re.match(r'^https://[a-z0-9.-]+\.[a-z]{2,}(:\d+)?$', sys.argv[1].rstrip('/'), re.I):
     sys.exit('Usage: python tools/set-domain.py https://vireleo.me   (must start with https://, no path)')
@@ -446,6 +446,8 @@ def build_block(file, path, ptype, crumb, title, desc):
         f'<!--seo:start-->\n'
         f'<link rel="canonical" href="{url}">\n'
         f'<meta property="og:url" content="{url}">\n'
+        f'<meta property="og:type" content="website">\n'
+        f'<meta property="og:site_name" content="VIRELEO">\n'
         f'<meta property="og:title" content="{title}">\n'
         f'<meta property="og:description" content="{desc}">\n'
         f'<meta property="og:image" content="{SITE}/images/og-image.jpg">\n'
