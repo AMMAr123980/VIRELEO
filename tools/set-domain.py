@@ -226,6 +226,38 @@ def build_block(file, path, ptype, crumb, title, desc):
         page["datePublished"] = "2026-11-01"
         page["dateModified"] = TODAY
 
+    if file == 'blog-cost-to-build-saas-mvp.html':
+        graph.append({
+            "@type": "FAQPage",
+            "@id": url + '#faq',
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How much does an MVP cost in 2026?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "A production-grade SaaS Minimum Viable Product (MVP) typically costs between $3,500 and $12,000. A lean micro-SaaS starts around $2,500 – $4,500, while complex platforms with multi-tenant permissions or AI APIs range from $8,000 to $18,000."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much should I spend on an MVP as a startup founder?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "As a rule of thumb, allocate 60% of your initial budget to custom engineering and core product architecture ($3,500 – $8,000), leaving the remaining 40% for user acquisition, customer interviews, and domain setup."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is the realistic timeline to build and launch an MVP?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Our standard SaaS MVP builds launch within 3 to 6 weeks, divided into weekly milestones: Architecture & Database Design (Week 1), UI & Core Feature Workflows (Weeks 2-3), Stripe Billing & Integrations (Week 4), and Quality Assurance Handover (Weeks 5-6)."
+                    }
+                }
+            ]
+        })
+
     if file == 'capabilities.html':
         page["mainEntity"] = {
             "@type": "ItemList",
