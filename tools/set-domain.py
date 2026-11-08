@@ -325,6 +325,46 @@ def build_block(file, path, ptype, crumb, title, desc):
             ]
         })
 
+    if file == 'contact.html':
+        graph.append({
+            "@type": "FAQPage",
+            "@id": url + '#faq',
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What information should I prepare before contacting VIRELEO?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Share a brief overview of your product idea, target audience, core features or required integrations (such as Stripe, WhatsApp API, or OpenAI models), and your desired launch timeline. A high-level concept is enough to initiate our discovery review."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How quickly does VIRELEO respond to project inquiries?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We review and respond to all project inquiries sent via our contact form, email, or WhatsApp within 24 business hours with initial technical feedback and scheduling options for an architecture call."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does VIRELEO sign Non-Disclosure Agreements (NDAs)?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We routinely sign mutual Non-Disclosure Agreements (NDAs) prior to reviewing proprietary project specifications, database architectures, or business workflows to safeguard founder intellectual property."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What engagement models and payment terms do you offer?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We operate primarily on transparent milestone-based fixed-price contracts for custom websites, SaaS MVPs, and mobile applications. For ongoing automation maintenance and iterative feature sprints, we provide dedicated monthly engineering retainers."
+                    }
+                }
+            ]
+        })
+
     if file == 'capabilities.html':
         page["mainEntity"] = {
             "@type": "ItemList",
