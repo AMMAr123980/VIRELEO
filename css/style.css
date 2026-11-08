@@ -15,8 +15,8 @@
   --line: #e3ddd0;
   --green: #1fa971;
 
-  --font-head: "Poppins", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-head: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --wrap: 1180px;
   --gutter: clamp(20px, 5vw, 48px);
@@ -615,13 +615,12 @@ html:not(.js) .bp g path, html:not(.js) .bp g rect, html:not(.js) .bp g circle {
   --muted: #5d6480;
   --line: #e3e1f3;
   --grad: linear-gradient(100deg, #6a3df0 0%, #3d7bf0 58%, #1fc6d6 100%);
-  --font-head: "Sora", "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-head: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --font-serif: "Instrument Serif", Georgia, serif;
 }
 body { background: var(--white); }
-h1, h2, h3 { letter-spacing: -0.035em; }
-.label { font-family: var(--font-mono); letter-spacing: .14em; font-size: .7rem; }
+h1, h2, h3 { letter-spacing: -0.03em; }
+.label { font-family: var(--font-body); font-weight: 600; letter-spacing: .08em; font-size: .72rem; text-transform: uppercase; }
 .mono { font-family: var(--font-mono); }
 ::selection { background: rgba(106,61,240,.28); }
 :focus-visible { outline-color: var(--violet); }
@@ -1872,19 +1871,19 @@ button, input, select, textarea { max-width: 100%; }
 }
 
 /* v42 — home hero rebuilt to match the reference picture exactly */
-.hero2 { position: relative; min-height: max(100svh, 44.35vw); background: linear-gradient(90deg, rgb(249, 245, 242) 0%, rgb(249, 245, 242) 40%, rgb(226, 237, 249) 100%); overflow: hidden; isolation: isolate; }
+.hero2 { position: relative; min-height: max(100svh, 44.35vw); background: radial-gradient(75% 65% at 20% 0%, rgba(225, 238, 255, 0.75) 0%, rgba(246, 249, 255, 0.95) 50%, #ffffff 100%); overflow: hidden; isolation: isolate; }
 .hero2-stage { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; aspect-ratio: 1884 / 835; container-type: inline-size; }
 .hero2-img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 9%); mask-image: linear-gradient(180deg, transparent 0, #000 9%); animation: h2img 1.3s var(--ease, ease) both; }
 @keyframes h2img { from { opacity: 0; transform: scale(1.025); } to { opacity: 1; transform: none; } }
 .hero2-copy { position: absolute; left: 4.25cqw; top: 7.7cqw; z-index: 2; color: #0a1330; }
-.hero2-copy h1 { margin: 0; font-family: var(--font-head); font-weight: 700; font-size: 4.55cqw; line-height: .885; letter-spacing: -.038em; white-space: nowrap; color: #0a1330; }
+.hero2-copy h1 { margin: 0; font-family: var(--font-head); font-weight: 700; font-size: 3.85cqw; line-height: 1.08; letter-spacing: -.03em; white-space: nowrap; color: #0a1330; }
 .hero2-copy h1 em { font-style: normal; }
-.hero2-lead { margin: 1.3cqw 0 0; max-width: 36cqw; font-size: 1.34cqw; line-height: 2.02cqw; color: #5a6479; letter-spacing: .005em; }
+.hero2-lead { margin: 1.4cqw 0 0; max-width: 38cqw; font-size: 1.22cqw; line-height: 1.9cqw; color: #475569; letter-spacing: 0; }
 .hero2-actions { display: flex; gap: 1cqw; margin-top: 2.1cqw; }
-.h2btn { display: inline-flex; align-items: center; gap: .9cqw; height: 3.25cqw; padding: 0 2.2cqw; border-radius: 999px; font: 600 1.08cqw/1 var(--font-body); text-decoration: none; transition: transform .3s var(--ease, ease), box-shadow .3s; }
+.h2btn { display: inline-flex; align-items: center; gap: .9cqw; height: 3.25cqw; padding: 0 2.2cqw; border-radius: 999px; font: 600 1.05cqw/1 var(--font-body); text-decoration: none; transition: transform .3s var(--ease, ease), box-shadow .3s; }
 .h2btn svg { width: 1.1cqw; height: 1.1cqw; }
-.h2btn-grad { color: #fff; background: linear-gradient(90deg, #17c3f0, #7447f0); box-shadow: 0 1cqw 2.2cqw -1cqw rgba(80,70,240,.65); }
-.h2btn-white { color: #0a1330; background: #fff; border: 1px solid rgba(15,25,60,.08); box-shadow: 0 1cqw 2.4cqw -1.4cqw rgba(20,30,70,.35); }
+.h2btn-grad { color: #fff; background: linear-gradient(90deg, #17c3f0, #6d4df2); box-shadow: 0 1cqw 2.2cqw -1cqw rgba(80,70,240,.65); }
+.h2btn-white { color: #0f172a; background: #fff; border: 1px solid rgba(15,23,42,.12); box-shadow: 0 1cqw 2.4cqw -1.4cqw rgba(20,30,70,.25); }
 .h2btn:hover { transform: translateY(-3px); }
 /* animated words */
 .js .hero2 [data-split] .wi { transform: translateY(115%) rotate(4deg); filter: blur(10px); transform-origin: left bottom; }
@@ -1914,7 +1913,7 @@ button, input, select, textarea { max-width: 100%; }
   .hero2 { min-height: 0; padding-top: 104px; background: #f4f6fc; }
   .hero2-stage { position: static; aspect-ratio: auto; container-type: normal; display: flex; flex-direction: column; }
   .hero2-copy { position: static; padding: 0 22px; }
-  .hero2-copy h1 { font-size: clamp(2.2rem, 9vw, 3.6rem); line-height: .95; white-space: normal; }
+  .hero2-copy h1 { font-size: clamp(2.2rem, 9vw, 3.6rem); line-height: 1.12; white-space: normal; letter-spacing: -.025em; }
   .hero2-lead { margin-top: 16px; max-width: 34em; font-size: 1.05rem; line-height: 1.55; }
   .hero2-actions { margin-top: 22px; flex-wrap: wrap; gap: 12px; }
   .h2btn { height: 52px; padding: 0 26px; font-size: 1rem; gap: 10px; }
@@ -1929,14 +1928,14 @@ button, input, select, textarea { max-width: 100%; }
   .js .hero2 [data-split] .wi { filter: none !important; transform: none !important; }
 }
 @media (min-width: 981px) {
-  .hero2-copy h1 { font-size: 4.15cqw; line-height: .92; }
+  .hero2-copy h1 { font-size: 3.85cqw; line-height: 1.1; }
   .hero2-lead { margin-top: 1.5cqw; }
   body.home .site-header:not(.is-scrolled) .main-nav { margin-left: auto; }
 }
 
 /* v43 — smaller headline so the picture stays visible; menu button + Services back on the home header */
 @media (min-width: 981px) {
-  .hero2-copy h1 { font-size: 3.35cqw; line-height: .96; letter-spacing: -.035em; }
+  .hero2-copy h1 { font-size: 3.35cqw; line-height: 1.1; letter-spacing: -.025em; }
   .hero2-lead { font-size: 1.2cqw; line-height: 1.85cqw; max-width: 30cqw; margin-top: 1.4cqw; }
   .hero2-actions { margin-top: 1.8cqw; }
   .h2btn { height: 2.9cqw; padding: 0 1.9cqw; font-size: 1cqw; }
