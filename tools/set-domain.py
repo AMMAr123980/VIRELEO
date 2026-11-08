@@ -57,7 +57,7 @@ org_id = SITE + '/#organization'
 site_id = SITE + '/#website'
 
 org = {
-    "@type": ["Organization", "ProfessionalService"],
+    "@type": "Organization",
     "@id": org_id,
     "name": "VIRELEO",
     "alternateName": "VIRELEO Studio",
