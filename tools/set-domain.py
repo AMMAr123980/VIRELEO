@@ -64,124 +64,72 @@ org = {
     "url": SITE + '/',
     "logo": {
         "@type": "ImageObject",
+        "@id": SITE + '/#logo',
         "url": SITE + '/icon-512.png',
         "width": 512,
         "height": 512,
         "caption": "VIRELEO Logo"
     },
-    "image": SITE + '/images/og-image.jpg',
-    "description": "Digital engineering studio providing custom website development, mobile app development, AI automation and AI chatbot solutions.",
-    "email": "fitduo07@gmail.com",
-    "telephone": "+92 321 5772078",
-    "priceRange": "$$",
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Rawalpindi",
-        "addressRegion": "Punjab",
-        "addressCountry": "PK"
+    "image": {
+        "@type": "ImageObject",
+        "url": SITE + '/images/og-image.jpg'
     },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "33.5651",
-        "longitude": "73.0169"
-    },
-    "openingHoursSpecification": [
-        {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "21:00"
-        }
-    ],
-    "areaServed": [
-        {"@type": "Place", "name": "Worldwide"},
-        {"@type": "Country", "name": "United States"},
-        {"@type": "Country", "name": "United Kingdom"},
-        {"@type": "Country", "name": "United Arab Emirates"},
-        {"@type": "Country", "name": "Canada"},
-        {"@type": "Country", "name": "Australia"},
-        {"@type": "Country", "name": "Pakistan"}
-    ],
+    "description": "A digital engineering studio building custom-coded websites, applications, AI automation and chatbot integrations.",
     "founder": {
         "@type": "Person",
         "name": "Ammar Hassan Malik",
-        "jobTitle": "Founder & Lead Engineer",
-        "sameAs": [
-            "https://www.linkedin.com/in/vireleo-806625322/",
-            "https://www.instagram.com/vireleo.me/"
-        ]
+        "jobTitle": "Founder & Lead Engineer"
     },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "fitduo07@gmail.com",
+        "telephone": "+92 321 5772078"
+    },
+    "areaServed": "Worldwide",
     "sameAs": [
-        "https://www.linkedin.com/in/vireleo-806625322/",
         "https://www.instagram.com/vireleo.me/",
-        "https://github.com/AMMAr123980/VIRELEO"
-    ],
-    "contactPoint": [
-        {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "email": "fitduo07@gmail.com",
-            "telephone": "+92 321 5772078",
-            "availableLanguage": ["English", "Urdu"]
-        }
-    ],
-    "knowsAbout": [
-        {"@type": "DefinedTerm", "name": "Web Development", "sameAs": "https://en.wikipedia.org/wiki/Web_development"},
-        {"@type": "DefinedTerm", "name": "Artificial Intelligence", "sameAs": "https://en.wikipedia.org/wiki/Artificial_intelligence"},
-        {"@type": "DefinedTerm", "name": "Chatbot", "sameAs": "https://en.wikipedia.org/wiki/Chatbot"},
-        {"@type": "DefinedTerm", "name": "Business Process Automation", "sameAs": "https://en.wikipedia.org/wiki/Business_process_automation"},
-        {"@type": "DefinedTerm", "name": "Mobile App Development", "sameAs": "https://en.wikipedia.org/wiki/Mobile_app_development"},
-        "Web Development Company",
-        "Web Development Agency",
-        "Custom Web Development Company",
-        "Global Web Development Agency",
-        "Offshore Web Development Agency",
-        "Hire Dedicated Web Developers",
-        "Hire Software Development Agency",
-        "Hire Web App Developers",
-        "Custom Software Development Company",
-        "Full-Stack Web Development Services",
-        "Custom Web Application Development",
-        "Frontend & Backend Engineering",
-        "SaaS MVP Development Company",
-        "MVP Development Agency",
-        "Cost to Build MVP",
-        "SaaS MVP Development Cost",
-        "Custom Software Development House",
-        "AI Development Company",
-        "AI Automation Agency",
-        "AI Workflow Automation Services",
-        "Business Process Automation AI",
-        "Intelligent Automation Consulting",
-        "Custom AI Solutions for Business",
-        "Enterprise AI Solutions",
-        "AI Agent Development Agency",
-        "Custom Mobile App Development",
-        "Custom AI Chatbot Integration",
-        "Custom WhatsApp AI Agent Development",
-        "WhatsApp Business Automation Bot",
-        "WhatsApp RAG Chatbot Integration",
-        "Instagram DM Automation Bot",
-        "OpenAI & Claude API Integration",
-        "Generative AI & LLM API Integrations",
-        "Web Development Company in Pakistan",
-        "Web Development Agency Pakistan",
-        "Best Software House in Pakistan",
-        "Digital Engineering Studio"
+        "https://www.linkedin.com/in/vireleo-806625322/"
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "VIRELEO Engineering Services",
+        "name": "VIRELEO Services",
         "itemListElement": [
             {
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": name,
-                    "description": desc,
-                    "url": s_url
+                    "name": "Website Development",
+                    "url": f"{SITE}/website-development.html",
+                    "provider": {"@id": org_id}
                 }
-            } for name, desc, s_url in SERVICES
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "App Development",
+                    "url": f"{SITE}/app-development.html",
+                    "provider": {"@id": org_id}
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Automation",
+                    "url": f"{SITE}/ai-automation.html",
+                    "provider": {"@id": org_id}
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Chatbot Development",
+                    "url": f"{SITE}/ai-chatbots.html",
+                    "provider": {"@id": org_id}
+                }
+            }
         ]
     }
 }
@@ -191,257 +139,677 @@ website = {
     "@id": site_id,
     "url": SITE + '/',
     "name": "VIRELEO",
-    "alternateName": "VIRELEO Studio",
-    "inLanguage": "en",
-    "publisher": {"@id": org_id}
+    "publisher": {"@id": org_id},
+    "inLanguage": "en"
 }
 
 def build_block(file, path, ptype, crumb, title, desc):
     url = SITE + path
-    graph = [org, website]
-    page = {
-        "@type": ptype,
-        "@id": url + '#webpage',
-        "url": url,
-        "name": title,
-        "description": desc,
-        "inLanguage": "en",
-        "isPartOf": {
-            "@type": "WebSite",
-            "@id": site_id,
-            "url": SITE + '/',
-            "name": "VIRELEO"
-        },
-        "about": {"@id": org_id},
-        "mainEntity": {"@id": org_id},
-        "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": SITE + '/images/og-image.jpg'
-        },
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".hero2-lead", ".section-title", "h2"]
-        }
-    }
-    if crumb:
-        page["breadcrumb"] = {"@id": url + '#breadcrumb'}
-        graph.append({
-            "@type": "BreadcrumbList",
-            "@id": url + '#breadcrumb',
-            "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + '/'},
-                {"@type": "ListItem", "position": 2, "name": crumb, "item": url}
-            ]
-        })
-    service_pages = {
-        'website-development.html': ('Website development', 'Custom business websites, landing pages, portfolio sites and e-commerce experiences.'),
-        'app-development.html': ('Web and mobile app development', 'Web applications, dashboards, portals, custom tools and MVPs.'),
-        'ai-automation.html': ('AI workflow automation', 'AI-assisted workflows for lead routing, information processing, notifications and connected tools.'),
-        'ai-chatbots.html': ('AI chatbot development', 'Website, WhatsApp and Instagram chatbot experiences for customer enquiries and lead capture.'),
-    }
-    if file in service_pages:
-        n, d = service_pages[file]
-        page['mainEntity'] = {
-            '@type': 'Service',
-            'name': n,
-            'description': d,
-            'provider': {'@id': org_id},
-            'serviceType': n,
-            'areaServed': 'Worldwide'
-        }
-    if ptype == 'BlogPosting':
-        page["headline"] = title
-        page["author"] = {
-            "@type": "Person",
-            "name": "Ammar Hassan Malik",
-            "jobTitle": "Founder & Lead Engineer",
-            "url": SITE + "/about.html"
-        }
-        page["publisher"] = {"@id": org_id}
-        page["datePublished"] = "2026-11-01"
-        page["dateModified"] = TODAY
-
-    if file == 'blog-cost-to-build-saas-mvp.html':
-        graph.append({
-            "@type": "FAQPage",
-            "@id": url + '#faq',
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "How much does an MVP cost in 2026?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "A production-grade SaaS Minimum Viable Product (MVP) typically costs between $3,500 and $12,000. A lean micro-SaaS starts around $2,500 – $4,500, while complex platforms with multi-tenant permissions or AI APIs range from $8,000 to $18,000."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How much should I spend on an MVP as a startup founder?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "As a rule of thumb, allocate 60% of your initial budget to custom engineering and core product architecture ($3,500 – $8,000), leaving the remaining 40% for user acquisition, customer interviews, and domain setup."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What is the realistic timeline to build and launch an MVP?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Our standard SaaS MVP builds launch within 3 to 6 weeks, divided into weekly milestones: Architecture & Database Design (Week 1), UI & Core Feature Workflows (Weeks 2-3), Stripe Billing & Integrations (Week 4), and Quality Assurance Handover (Weeks 5-6)."
-                    }
-                }
-            ]
-        })
-
-    if file == 'about.html':
-        graph.append({
-            "@type": "FAQPage",
-            "@id": url + '#faq',
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What is VIRELEO?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "VIRELEO is an AI-native digital engineering studio founded by Ammar Hassan Malik. We specialize in custom-coded website development, scalable web applications, SaaS MVPs, AI workflow automation, and intelligent WhatsApp chatbots."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Who does VIRELEO work with?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We partner with early-stage startups, SaaS founders, and growing enterprises worldwide looking for high-performance software engineering without bloated page builders, agency layers, or recurring platform licenses."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How does VIRELEO engineer digital products?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Every project follows a structured 4-phase agile engineering process: Discovery & Architecture (Week 1), UI & Core Feature Engineering (Weeks 2-3), API & Payment Integrations (Week 4), and Quality Assurance Handover with 100% source code ownership."
-                    }
-                }
-            ]
-        })
-
-    if file == 'contact.html':
-        graph.append({
-            "@type": "FAQPage",
-            "@id": url + '#faq',
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What information should I prepare before contacting VIRELEO?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Share a brief overview of your product idea, target audience, core features or required integrations (such as Stripe, WhatsApp API, or OpenAI models), and your desired launch timeline. A high-level concept is enough to initiate our discovery review."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How quickly does VIRELEO respond to project inquiries?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We review and respond to all project inquiries sent via our contact form, email, or WhatsApp within 24 business hours with initial technical feedback and scheduling options for an architecture call."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Does VIRELEO sign Non-Disclosure Agreements (NDAs)?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. We routinely sign mutual Non-Disclosure Agreements (NDAs) prior to reviewing proprietary project specifications, database architectures, or business workflows to safeguard founder intellectual property."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What engagement models and payment terms do you offer?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We operate primarily on transparent milestone-based fixed-price contracts for custom websites, SaaS MVPs, and mobile applications. For ongoing automation maintenance and iterative feature sprints, we provide dedicated monthly engineering retainers."
-                    }
-                }
-            ]
-        })
-
-    if file == 'capabilities.html':
-        page["mainEntity"] = {
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": i + 1,
-                    "item": {
-                        "@type": "Service",
-                        "name": n,
-                        "description": d,
-                        "url": s_url,
-                        "provider": {"@id": org_id},
-                        "serviceType": n
-                    }
-                } for i, (n, d, s_url) in enumerate(SERVICES)
-            ]
-        }
-    if file == 'work.html' and projects:
-        page["mainEntity"] = {
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": i + 1,
-                    "item": {
-                        "@type": "CreativeWork",
-                        "name": p['title'],
-                        "description": p['desc'],
-                        "creator": {"@id": org_id},
-                        **({"url": p['url']} if p['url'] else {})
-                    }
-                } for i, p in enumerate(projects)
-            ]
-        }
-    graph.append(page)
     if file == 'index.html':
-        graph.append({
-            "@type": "FAQPage",
-            "@id": url + '#faq',
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": item["q"],
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": item["a"]
-                    }
-                } for item in [
+        graph = [
+            org,
+            website,
+            {
+                "@type": ["WebPage", "FAQPage"],
+                "@id": f"{SITE}/#webpage",
+                "url": f"{SITE}/",
+                "name": "VIRELEO — Custom Web Development & AI Automation Agency",
+                "description": "Global custom web development company and AI automation agency engineering custom web apps, mobile apps and SaaS platforms for growing businesses worldwide.",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": org_id},
+                "publisher": {"@id": org_id},
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": f"{SITE}/images/og-image.jpg"
+                },
+                "inLanguage": "en",
+                "mainEntity": [
                     {
-                        "q": "How do I hire VIRELEO for custom web development and web app engineering?",
-                        "a": "To hire VIRELEO for custom website or web application development, share your project requirements through our Contact page. We review your technical specifications, architecture, and timeline to deliver custom-coded software built from scratch without page builders or WordPress plugins."
+                        "@type": "Question",
+                        "name": "How do I hire VIRELEO for custom web development and web app engineering?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "To hire VIRELEO for custom website or web application development, share your project requirements through the Contact page. VIRELEO reviews your technical specifications, architecture and timeline to deliver custom-coded software built from scratch without page builders or WordPress plugins."
+                        }
                     },
                     {
-                        "q": "What services does an AI automation agency provide for businesses?",
-                        "a": "As an AI automation agency, VIRELEO builds autonomous business workflows, CRM integrations, API data pipelines, automated lead routing, and document processing systems that eliminate repetitive manual tasks and accelerate operations."
+                        "@type": "Question",
+                        "name": "What services does an AI automation agency provide for businesses?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "VIRELEO builds autonomous business workflows, CRM integrations, API data pipelines, automated lead routing and document processing systems that eliminate repetitive manual tasks and accelerate operations."
+                        }
                     },
                     {
-                        "q": "Can you build custom AI chatbots for WhatsApp and Instagram DM automation?",
-                        "a": "Yes. VIRELEO develops intelligent custom AI chatbots integrated directly with official Meta APIs for WhatsApp and Instagram. Our bots deliver 24/7 customer support, capture and qualify leads, answer product questions, and sync user data seamlessly into your CRM."
+                        "@type": "Question",
+                        "name": "Can you build custom AI chatbots for WhatsApp and Instagram DM automation?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. VIRELEO develops custom AI chatbots integrated with official Meta APIs for WhatsApp and Instagram. The bots can provide customer support, capture and qualify leads, answer product questions and sync user data into a CRM."
+                        }
                     },
                     {
-                        "q": "How much does custom web development or SaaS MVP engineering cost?",
-                        "a": "Custom software development and SaaS MVP engineering costs depend on feature scope, technical complexity, database design, and third-party integrations. VIRELEO provides transparent fixed-scope proposals, phased milestone delivery, and complete source code ownership."
+                        "@type": "Question",
+                        "name": "How much does custom web development or SaaS MVP engineering cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Custom software development and SaaS MVP engineering costs depend on feature scope, technical complexity, database design and third-party integrations. VIRELEO provides fixed-scope proposals, phased milestone delivery and complete source-code ownership."
+                        }
                     },
                     {
-                        "q": "Why choose custom-coded web applications over WordPress or Webflow?",
-                        "a": "Custom-coded applications deliver sub-second loading speeds, perfect 100 Core Web Vitals, enterprise-grade security without third-party plugin vulnerabilities, and complete architectural freedom tailored strictly to your business logic and scaling needs."
+                        "@type": "Question",
+                        "name": "Why choose custom-coded web applications over WordPress or Webflow?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Custom-coded applications provide loading-speed, security and architectural flexibility benefits without relying on third-party page-builder plugins, allowing the application to be tailored to specific business logic and scaling needs."
+                        }
                     },
                     {
-                        "q": "How long does it take to develop a custom website, mobile app, or AI solution?",
-                        "a": "Most standard business websites and AI chatbots launch within 1 to 2 weeks. Comprehensive full-stack web applications and SaaS MVPs typically require 3 to 6 weeks, structured with transparent milestone demos and full codebase handover."
+                        "@type": "Question",
+                        "name": "How long does it take to develop a custom website, mobile app or AI solution?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most standard business websites and AI chatbots launch within 1 to 2 weeks. Comprehensive full-stack web applications and SaaS MVPs typically require 3 to 6 weeks, with milestone demonstrations and codebase handover."
+                        }
                     }
                 ]
-            ]
-        })
-    ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=1, ensure_ascii=False)
+            }
+        ]
+    elif file == 'about.html':
+        graph = [
+            {
+                "@type": "AboutPage",
+                "@id": f"{SITE}/about.html#webpage",
+                "url": f"{SITE}/about.html",
+                "name": "About VIRELEO | Modern Digital Engineering Studio",
+                "description": "Learn about VIRELEO, an AI-native digital engineering studio building custom-coded websites, applications, AI automation, and chatbot integrations.",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": org_id},
+                "mainEntity": {"@id": org_id},
+                "primaryImageOfPage": {"@id": f"{SITE}/about.html#primaryimage"},
+                "breadcrumb": {"@id": f"{SITE}/about.html#breadcrumb"},
+                "inLanguage": "en"
+            },
+            {
+                "@type": "ImageObject",
+                "@id": f"{SITE}/about.html#primaryimage",
+                "url": f"{SITE}/images/og-image.jpg",
+                "contentUrl": f"{SITE}/images/og-image.jpg"
+            },
+            {
+                "@type": "Organization",
+                "@id": org_id,
+                "name": "VIRELEO",
+                "alternateName": "VIRELEO Studio",
+                "url": f"{SITE}/",
+                "description": "A digital engineering studio building custom-coded websites, applications, AI automation and chatbot integrations.",
+                "logo": {
+                    "@type": "ImageObject",
+                    "@id": f"{SITE}/#logo",
+                    "url": f"{SITE}/icon-512.png",
+                    "contentUrl": f"{SITE}/icon-512.png",
+                    "width": 512,
+                    "height": 512,
+                    "caption": "VIRELEO Logo"
+                },
+                "image": {"@id": f"{SITE}/about.html#primaryimage"},
+                "founder": {
+                    "@type": "Person",
+                    "name": "Ammar Hassan Malik"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+92 321 5772078",
+                    "email": "fitduo07@gmail.com",
+                    "contactType": "customer service"
+                },
+                "sameAs": [
+                    "https://www.instagram.com/vireleo.me/",
+                    "https://www.linkedin.com/in/vireleo-806625322/"
+                ]
+            },
+            website,
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{SITE}/about.html#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "About", "item": f"{SITE}/about.html"}
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": f"{SITE}/about.html#faq",
+                "url": f"{SITE}/about.html#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is VIRELEO?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "VIRELEO is an AI-native digital engineering studio founded by Ammar Hassan Malik. We specialize in custom-coded website development, scalable web applications, SaaS MVPs, AI workflow automation, and intelligent WhatsApp chatbots."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who does VIRELEO work with?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We partner with early-stage startups, SaaS founders, and growing enterprises worldwide looking for high-performance software engineering without bloated page builders, agency layers, or recurring platform licenses."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does VIRELEO engineer digital products?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Every project follows a structured 4-phase agile engineering process: Discovery and Architecture (Week 1), UI and Core Feature Engineering (Weeks 2-3), API and Payment Integrations (Week 4), and Quality Assurance Handover with 100% source code ownership."
+                        }
+                    }
+                ]
+            }
+        ]
+    elif file == 'app-development.html':
+        graph = [
+            {
+                "@type": "Service",
+                "@id": f"{SITE}/app-development.html#service",
+                "name": "App Development",
+                "serviceType": "Custom web and mobile app development",
+                "url": f"{SITE}/app-development.html",
+                "description": "Custom app development for business dashboards, customer portals, internal workflow tools, mobile app experiences, prototypes, MVPs and API integrations.",
+                "provider": {"@id": org_id},
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "App Development Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Business dashboards and customer portals",
+                                "description": "Focused applications that give teams and customers access to the information and actions they need."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Custom internal tools and workflow apps",
+                                "description": "Interfaces that digitise specific operational steps and are shaped around real users."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Mobile app experiences and prototypes",
+                                "description": "Mobile experiences and prototypes for validating product ideas and key user journeys."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "MVPs, API integrations and third-party services",
+                                "description": "MVP development and system integrations where reliable APIs and suitable permissions are available."
+                            }
+                        }
+                    ]
+                }
+            },
+            org,
+            website,
+            {
+                "@type": "WebPage",
+                "@id": f"{SITE}/app-development.html#webpage",
+                "url": f"{SITE}/app-development.html",
+                "name": "Custom Web & Mobile App Development — MVP Development Agency | VIRELEO",
+                "description": "App development services for dashboards, portals, internal tools, mobile experiences, prototypes, MVPs and API integrations.",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": f"{SITE}/app-development.html#service"},
+                "mainEntity": {"@id": f"{SITE}/app-development.html#service"},
+                "breadcrumb": {"@id": f"{SITE}/app-development.html#breadcrumb"}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{SITE}/app-development.html#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "App Development", "item": f"{SITE}/app-development.html"}
+                ]
+            }
+        ]
+    elif file == 'blog.html':
+        graph = [
+            org,
+            website,
+            {
+                "@type": "CollectionPage",
+                "@id": f"{SITE}/blog.html#webpage",
+                "url": f"{SITE}/blog.html",
+                "name": "Engineering Insights & Guides | VIRELEO Digital Studio",
+                "description": "Detailed, research-backed guides covering development costs, tech stack selection, and AI workflow integration.",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": org_id},
+                "publisher": {"@id": org_id},
+                "breadcrumb": {"@id": f"{SITE}/blog.html#breadcrumb"},
+                "mainEntity": {"@id": f"{SITE}/blog.html#itemlist"}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{SITE}/blog.html#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": f"{SITE}/blog.html"}
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{SITE}/blog.html#itemlist",
+                "name": "Featured Playbooks",
+                "numberOfItems": 4,
+                "itemListOrder": "https://schema.org/ItemListOrderAscending",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "How Much Does It Cost to Build a SaaS MVP in 2026? Complete Cost & Timeline Guide",
+                        "url": f"{SITE}/blog-cost-to-build-saas-mvp.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Custom Code vs WordPress: Speed, Security & Scalability Comparison for Business",
+                        "url": f"{SITE}/blog-custom-code-vs-wordpress.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "How to Automate WhatsApp & Instagram DMs with Custom AI Chatbots (Meta Cloud API)",
+                        "url": f"{SITE}/blog-whatsapp-instagram-ai-chatbot-guide.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "AI Workflow Automation: How Small Businesses Save 20+ Hours Every Week",
+                        "url": f"{SITE}/blog-ai-workflow-automation-guide.html"
+                    }
+                ]
+            }
+        ]
+    elif file == 'capabilities.html':
+        graph = [
+            org,
+            website,
+            {
+                "@type": "WebPage",
+                "@id": f"{SITE}/capabilities.html#webpage",
+                "url": f"{SITE}/capabilities.html",
+                "name": "Engineering Capabilities & Technical Stack | VIRELEO",
+                "description": "VIRELEO's core capabilities include website development, applications and software, AI automation, and AI chatbots.",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": org_id},
+                "mainEntity": {"@id": f"{SITE}/capabilities.html#capabilities"},
+                "inLanguage": "en"
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{SITE}/capabilities.html#capabilities",
+                "name": "VIRELEO Core Capabilities",
+                "numberOfItems": 4,
+                "itemListOrder": "https://schema.org/ItemListOrderAscending",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Service",
+                            "@id": f"{SITE}/website-development.html#service",
+                            "name": "Website development",
+                            "serviceType": "Website development",
+                            "description": "Fast, responsive websites with clear messaging, accessible layouts, thoughtful interactions and search-friendly foundations.",
+                            "url": f"{SITE}/website-development.html",
+                            "provider": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Service",
+                            "@id": f"{SITE}/app-development.html#service",
+                            "name": "Applications & software",
+                            "serviceType": "Application and software development",
+                            "description": "Useful web applications shaped around the workflows, users and outcomes a business needs.",
+                            "url": f"{SITE}/app-development.html",
+                            "provider": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Service",
+                            "@id": f"{SITE}/ai-automation.html#service",
+                            "name": "AI automation",
+                            "serviceType": "AI workflow automation",
+                            "description": "Connections between routine tasks and business tools that reduce manual work while keeping people in control.",
+                            "url": f"{SITE}/ai-automation.html",
+                            "provider": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Service",
+                            "@id": f"{SITE}/ai-chatbots.html#service",
+                            "name": "AI chatbots",
+                            "serviceType": "AI chatbot development",
+                            "description": "Conversational experiences for answering common questions and supporting customer enquiries.",
+                            "url": f"{SITE}/ai-chatbots.html",
+                            "provider": {"@id": org_id}
+                        }
+                    }
+                ]
+            }
+        ]
+    elif file == 'contact.html':
+        graph = [
+            {
+                "@type": "ContactPage",
+                "@id": f"{SITE}/contact.html#webpage",
+                "url": f"{SITE}/contact.html",
+                "name": "Contact VIRELEO | Start Your Web, App or AI Project",
+                "description": "Contact VIRELEO about custom website development, mobile app development, AI automation, and chatbot projects.",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": org_id},
+                "breadcrumb": {"@id": f"{SITE}/contact.html#breadcrumb"},
+                "hasPart": {"@id": f"{SITE}/contact.html#faq"}
+            },
+            org,
+            website,
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{SITE}/contact.html#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "Contact", "item": f"{SITE}/contact.html"}
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": f"{SITE}/contact.html#faq",
+                "url": f"{SITE}/contact.html#faq",
+                "name": "Frequently asked questions about working with VIRELEO",
+                "isPartOf": {"@id": f"{SITE}/contact.html#webpage"},
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What information should I prepare before contacting VIRELEO?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Share a brief overview of your product idea, target audience, core features or required integrations, and your desired launch timeline. A high-level concept is enough to initiate the discovery review."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly does VIRELEO respond to project inquiries?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "VIRELEO reviews and responds to project inquiries sent through the contact form, email, or WhatsApp within 24 business hours with initial technical feedback and scheduling options for an architecture call."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does VIRELEO sign Non-Disclosure Agreements (NDAs)?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. VIRELEO routinely signs mutual Non-Disclosure Agreements before reviewing proprietary project specifications, database architectures, or business workflows."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What engagement models and payment terms does VIRELEO offer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "VIRELEO primarily offers milestone-based fixed-price contracts for custom websites, SaaS MVPs, and mobile applications. Dedicated monthly engineering retainers are available for ongoing automation maintenance and iterative feature sprints."
+                        }
+                    }
+                ]
+            }
+        ]
+    elif file == 'work.html':
+        graph = [
+            org,
+            website,
+            {
+                "@type": "CollectionPage",
+                "@id": f"{SITE}/work.html#webpage",
+                "url": f"{SITE}/work.html",
+                "name": "Selected Projects & Engineering Case Studies | VIRELEO",
+                "isPartOf": {"@id": site_id},
+                "about": {"@id": org_id},
+                "breadcrumb": {"@id": f"{SITE}/work.html#breadcrumb"},
+                "mainEntity": {"@id": f"{SITE}/work.html#projects"}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{SITE}/work.html#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "Work", "item": f"{SITE}/work.html"}
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{SITE}/work.html#projects",
+                "name": "VIRELEO selected projects",
+                "numberOfItems": 8,
+                "itemListOrder": "https://schema.org/ItemListOrderAscending",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": "https://appliory.tech/#project",
+                            "name": "Appliory",
+                            "description": "A web platform providing free document checking, PDF management and image processing tools directly in the browser.",
+                            "url": "https://appliory.tech/",
+                            "image": f"{SITE}/images/projects/appliory.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": "https://ammar-portfolio-web.netlify.app/#project",
+                            "name": "Ammar Portfolio",
+                            "description": "A responsive personal portfolio presenting skills, projects and contact details in a clean, fast layout.",
+                            "url": "https://ammar-portfolio-web.netlify.app/",
+                            "image": f"{SITE}/images/projects/ammar-portfolio.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": "https://lean-canvas-model.netlify.app/#project",
+                            "name": "Lean Canvas Model",
+                            "description": "A web tool for laying out a business idea on the Lean Canvas, including its problem, solution, customers and revenue.",
+                            "url": "https://lean-canvas-model.netlify.app/",
+                            "image": f"{SITE}/images/projects/lean-canvas-model.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": f"{SITE}/work.html#whatsapp-dm-automation",
+                            "name": "WhatsApp DM Automation",
+                            "description": "Automated replies, lead capture and booking flows that run inside WhatsApp conversations.",
+                            "image": f"{SITE}/images/projects/whatsapp-dm-wide.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": f"{SITE}/work.html#instagram-dm-automation",
+                            "name": "Instagram DM Automation",
+                            "description": "Automated, consistent answers to Instagram direct messages so new enquiries are not left waiting.",
+                            "image": f"{SITE}/images/projects/instagram-dm-wide.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": f"{SITE}/work.html#iot-weather-hailstorm-protection",
+                            "name": "IoT Weather and Hailstorm Protection System",
+                            "description": "A mobile app connected to IoT sensors that tracks local weather and warns of incoming hailstorms.",
+                            "image": f"{SITE}/images/projects/iot-weather.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": "https://ai-employee-os-lhqy.vercel.app/#project",
+                            "name": "AI Employee OS",
+                            "description": "An AI-powered workspace that takes on routine business tasks like an additional member of the team.",
+                            "url": "https://ai-employee-os-lhqy.vercel.app/",
+                            "image": f"{SITE}/images/projects/ai-employee-os.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "@id": "https://email-intelligence-system-seven.vercel.app/#project",
+                            "name": "MailNexa AI",
+                            "description": "An email intelligence system that sorts incoming mail, summarizes it and helps users respond faster.",
+                            "url": "https://email-intelligence-system-seven.vercel.app/",
+                            "image": f"{SITE}/images/projects/mailnexa-ai.jpg",
+                            "creator": {"@id": org_id}
+                        }
+                    }
+                ]
+            }
+        ]
+    else:
+        graph = [org, website]
+        page = {
+            "@type": ptype,
+            "@id": url + '#webpage',
+            "url": url,
+            "name": title,
+            "description": desc,
+            "inLanguage": "en",
+            "isPartOf": {
+                "@type": "WebSite",
+                "@id": site_id,
+                "url": SITE + '/',
+                "name": "VIRELEO"
+            },
+            "about": {"@id": org_id},
+            "mainEntity": {"@id": org_id},
+            "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": SITE + '/images/og-image.jpg'
+            },
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", ".hero2-lead", ".section-title", "h2"]
+            }
+        }
+        if crumb:
+            page["breadcrumb"] = {"@id": url + '#breadcrumb'}
+            graph.append({
+                "@type": "BreadcrumbList",
+                "@id": url + '#breadcrumb',
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + '/'},
+                    {"@type": "ListItem", "position": 2, "name": crumb, "item": url}
+                ]
+            })
+        service_pages = {
+            'website-development.html': ('Website development', 'Custom business websites, landing pages, portfolio sites and e-commerce experiences.'),
+            'ai-automation.html': ('AI workflow automation', 'AI-assisted workflows for lead routing, information processing, notifications and connected tools.'),
+            'ai-chatbots.html': ('AI chatbot development', 'Website, WhatsApp and Instagram chatbot experiences for customer enquiries and lead capture.'),
+        }
+        if file in service_pages:
+            n, d = service_pages[file]
+            page['mainEntity'] = {
+                '@type': 'Service',
+                'name': n,
+                'description': d,
+                'provider': {'@id': org_id},
+                'serviceType': n,
+                'areaServed': 'Worldwide'
+            }
+        if ptype == 'BlogPosting':
+            page["headline"] = title
+            page["author"] = {
+                "@type": "Person",
+                "name": "Ammar Hassan Malik",
+                "jobTitle": "Founder & Lead Engineer",
+                "url": SITE + "/about.html"
+            }
+            page["publisher"] = {"@id": org_id}
+            page["datePublished"] = "2026-11-01"
+            page["dateModified"] = TODAY
+
+        if file == 'blog-cost-to-build-saas-mvp.html':
+            graph.append({
+                "@type": "FAQPage",
+                "@id": url + '#faq',
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How much does an MVP cost in 2026?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A production-grade SaaS Minimum Viable Product (MVP) typically costs between $3,500 and $12,000. A lean micro-SaaS starts around $2,500 – $4,500, while complex platforms with multi-tenant permissions or AI APIs range from $8,000 to $18,000."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much should I spend on an MVP as a startup founder?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "As a rule of thumb, allocate 60% of your initial budget to custom engineering and core product architecture ($3,500 – $8,000), leaving the remaining 40% for user acquisition, customer interviews, and domain setup."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the realistic timeline to build and launch an MVP?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our standard SaaS MVP builds launch within 3 to 6 weeks, divided into weekly milestones: Architecture & Database Design (Week 1), UI & Core Feature Workflows (Weeks 2-3), Stripe Billing & Integrations (Week 4), and Quality Assurance Handover (Weeks 5-6)."
+                        }
+                    }
+                ]
+            })
+        graph.append(page)
+
+    ld = json.dumps([{"@context": "https://schema.org", "@graph": graph}], indent=2, ensure_ascii=False)
     return (
         f'<!--seo:start-->\n'
         f'<link rel="canonical" href="{url}">\n'
@@ -451,6 +819,7 @@ def build_block(file, path, ptype, crumb, title, desc):
         f'<meta property="og:title" content="{title}">\n'
         f'<meta property="og:description" content="{desc}">\n'
         f'<meta property="og:image" content="{SITE}/images/og-image.jpg">\n'
+        f'<meta name="twitter:card" content="summary_large_image">\n'
         f'<meta name="twitter:title" content="{title}">\n'
         f'<meta name="twitter:description" content="{desc}">\n'
         f'<meta name="twitter:image" content="{SITE}/images/og-image.jpg">\n'
