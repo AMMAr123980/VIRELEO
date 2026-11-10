@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Advanced SEO, AEO & GEO Automation for VIRELEO
 Run with:
