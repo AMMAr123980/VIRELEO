@@ -2315,3 +2315,22 @@ body:has(.wa.is-visible) .vid-fab { bottom: 80px; }
 .fact-link .fact-ic { width: 18px !important; height: 18px !important; flex: 0 0 18px !important; vertical-align: middle !important; }
 .socials .pill { gap: 8px; }
 .socials .pill svg { width: 16px; height: 16px; flex: 0 0 16px; }
+
+/* Article Enhancements (TOC, Featured Snippet, Author Bio) */
+.featured-snippet-box { background: #ffffff; border: 2px solid #3b82f6; border-radius: 16px; padding: 24px 28px; margin: 26px 0 32px; box-shadow: 0 8px 24px rgba(59,130,246,.08); }
+.featured-snippet-box h2 { font-size: 1.35rem !important; margin: 0 0 12px !important; color: #0c1222 !important; }
+.featured-snippet-box p { font-size: 1.05rem !important; line-height: 1.7 !important; margin-bottom: 0 !important; color: #1e293b !important; }
+
+.article-toc { background: #f8fafc; border: 1px solid rgba(16,28,54,.10); border-radius: 14px; padding: 22px 28px; margin: 30px 0 40px; }
+.article-toc .toc-title { font-family: var(--font-head, Inter, sans-serif); font-size: 1.05rem; font-weight: 700; color: #101828; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
+.article-toc ul { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+.article-toc li { margin-bottom: 9px !important; font-size: .95rem !important; }
+.article-toc a { color: #2563eb !important; text-decoration: none !important; font-weight: 500 !important; }
+.article-toc a:hover { text-decoration: underline !important; color: #1d4ed8 !important; }
+
+.author-bio-card { display: flex; gap: 20px; align-items: center; background: #f8fafc; border: 1px solid rgba(16,28,54,.10); border-radius: 16px; padding: 24px; margin: 48px 0 30px; }
+.author-bio-card .author-avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, #1fc6d6, #477bff); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 1.35rem; flex-shrink: 0; }
+.author-bio-card h4 { margin: 0 0 6px; font-size: 1.12rem; color: #101828; font-family: var(--font-head, Inter, sans-serif); }
+.author-bio-card p { margin: 0 0 8px; font-size: .92rem; color: #475467; line-height: 1.55; }
+.author-bio-card a { color: #2563eb; font-weight: 600; text-decoration: none; font-size: .9rem; }
+.author-bio-card a:hover { text-decoration: underline; }

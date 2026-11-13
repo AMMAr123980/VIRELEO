@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Advanced SEO, AEO & GEO Automation for VIRELEO
 Run with:
@@ -803,6 +803,46 @@ def build_block(file, path, ptype, crumb, title, desc):
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "Our standard SaaS MVP builds launch within 3 to 6 weeks, divided into weekly milestones: Architecture & Database Design (Week 1), UI & Core Feature Workflows (Weeks 2-3), Stripe Billing & Integrations (Week 4), and Quality Assurance Handover (Weeks 5-6)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I own 100% of the source code after development?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, absolutely. Upon completion, full intellectual property, Git repositories, deployment configurations, and database credentials are transferred directly to your organization with zero recurring platform or agency license fees."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the cost to build a SaaS MVP with AI features?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "An AI-powered SaaS MVP that integrates OpenAI GPT models, Anthropic Claude, or vector search (Pinecone, Weaviate) typically costs between $9,000 and $18,000. The added cost comes from LLM API orchestration, prompt engineering, background inference queues, and semantic search pipelines. Timeline is 6 to 10 weeks."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I build a SaaS MVP for under $5,000?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes — if the scope is tightly controlled. A micro-SaaS with a single core workflow with basic authentication and Stripe billing can be built for $2,500 to $4,500 in 2 to 4 weeks. The key is ruthless feature prioritization: build only what you need to get your first 10 paying customers."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does it cost to go from MVP to full SaaS product?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Scaling a production MVP into a full SaaS product typically requires an additional investment of $8,000 to $30,000 depending on features added, such as advanced team permissions, multi-workspace support, analytics dashboards, and mobile app versions."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Should I hire a freelancer or an agency to build my SaaS MVP?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It depends on your risk tolerance. Vetted senior freelancers can be cost-effective but carry higher management overhead and delivery risk. Specialist studios like VIRELEO offer the structure and accountability of an agency at closer to freelancer pricing ($3,500 – $12,000) with milestone contracts and direct engineer access."
                         }
                     }
                 ]
