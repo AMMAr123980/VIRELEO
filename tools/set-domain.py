@@ -37,6 +37,7 @@ PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
     ('blog-whatsapp-instagram-ai-chatbot-guide.html', '/blog-whatsapp-instagram-ai-chatbot-guide.html', 'BlogPosting', 'WhatsApp & Instagram AI Bots', '0.85', 'monthly'),
     ('blog-ai-workflow-automation-guide.html', '/blog-ai-workflow-automation-guide.html', 'BlogPosting', 'AI Workflow Automation', '0.85', 'monthly'),
     ('contact.html', '/contact.html', 'ContactPage', 'Contact', '0.8', 'monthly'),
+    ('privacy-policy.html', '/privacy-policy.html', 'WebPage', 'Privacy Policy', '0.5', 'yearly'),
 ]
 
 SERVICES = [
@@ -843,6 +844,14 @@ def build_block(file, path, ptype, crumb, title, desc):
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "It depends on your risk tolerance. Vetted senior freelancers can be cost-effective but carry higher management overhead and delivery risk. Specialist studios like VIRELEO offer the structure and accountability of an agency at closer to freelancer pricing ($3,500 – $12,000) with milestone contracts and direct engineer access."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the MVP development cost in Saudi Arabia or the GCC?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "In Saudi Arabia and the GCC (Riyadh, Jeddah, Dubai), software agencies charge approximately 55,000 SAR to 130,000 SAR ($15,000 – $35,000 USD) for a custom SaaS MVP. Early-stage startups often partner with remote specialist engineering studios like VIRELEO to obtain high-performance code, bilingual readiness, and full IP ownership for 13,000 SAR to 45,000 SAR ($3,500 – $12,000 USD)."
                         }
                     }
                 ]
