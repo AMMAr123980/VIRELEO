@@ -11,6 +11,9 @@ Allow: /
 User-agent: Googlebot-Favicon
 Allow: /
 
+User-agent: Mediapartners-Google
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 
