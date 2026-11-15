@@ -751,9 +751,10 @@ def build_block(file, path, ptype, crumb, title, desc):
                 ]
             })
         service_pages = {
-            'website-development.html': ('Website development', 'Custom business websites, landing pages, portfolio sites and e-commerce experiences.'),
-            'ai-automation.html': ('AI workflow automation', 'AI-assisted workflows for lead routing, information processing, notifications and connected tools.'),
-            'ai-chatbots.html': ('AI chatbot development', 'Website, WhatsApp and Instagram chatbot experiences for customer enquiries and lead capture.'),
+            'website-development.html': ('Custom Website Development Services', 'Custom-coded business websites, web applications, landing pages, and scalable e-commerce storefronts.'),
+            'app-development.html': ('Mobile App & SaaS MVP Development', 'End-to-end iOS, Android, cross-platform mobile apps, cloud web applications, and production-ready SaaS MVPs.'),
+            'ai-automation.html': ('AI Workflow Automation Agency', 'AI-assisted workflows for lead routing, information processing, notifications, and connected autonomous systems.'),
+            'ai-chatbots.html': ('Custom AI Chatbot Development', 'Website, WhatsApp Business API, and Instagram DM chatbot automation for 24/7 customer support and lead qualification.'),
         }
         if file in service_pages:
             n, d = service_pages[file]
