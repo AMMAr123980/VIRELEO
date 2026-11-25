@@ -49,21 +49,21 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4368605380975029" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Selected Projects & Engineering Case Studies | VIRELEO</title>
-<meta name="description" content="Explore live case studies across custom web development, mobile apps, SaaS MVPs, and AI automation systems built and deployed by VIRELEO.">
-<meta name="keywords" content="web development portfolio, custom software case studies, live AI projects, SaaS MVP showcase, VIRELEO work">
+<title>Our Work & Projects | Web, SaaS & AI Solutions — VIRELEO</title>
+<meta name="description" content="Explore VIRELEO's portfolio of custom websites, SaaS platforms, mobile applications and AI automation projects. Discover how we engineer high-performance digital solutions.">
+<meta name="keywords" content="web development portfolio, SaaS MVP showcase, AI automation case studies, Flutter mobile apps, custom software studio, VIRELEO work">
 <meta name="theme-color" content="#0a0f1f">
-<meta property="og:title" content="Portfolio & Projects | VIRELEO Digital Engineering Studio">
-<meta property="og:description" content="Explore VIRELEO projects across custom Website development, mobile apps, AI automation and chatbot solutions. See selected work and project capabilities.">
+<meta property="og:title" content="Our Work & Projects | Web, SaaS & AI Solutions — VIRELEO">
+<meta property="og:description" content="Explore VIRELEO's portfolio of custom websites, SaaS platforms, mobile applications and AI automation projects. Discover how we engineer high-performance digital solutions.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VIRELEO">
 <meta property="og:locale" content="en_US">
 <meta name="author" content="VIRELEO">
-<meta name="twitter:title" content="Portfolio & Projects | VIRELEO Digital Engineering Studio">
-<meta name="twitter:description" content="Explore VIRELEO projects across custom Website development, mobile apps, AI automation and chatbot solutions. See selected work and project capabilities.">
+<meta name="twitter:title" content="Our Work & Projects | Web, SaaS & AI Solutions — VIRELEO">
+<meta name="twitter:description" content="Explore VIRELEO's portfolio of custom websites, SaaS platforms, mobile applications and AI automation projects. Discover how we engineer high-performance digital solutions.">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="VIRELEO — websites, apps and AI engineered to perform">
+<meta property="og:image:alt" content="VIRELEO — Selected Work & Engineering Case Studies">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="icon" type="image/png" sizes="48x48" href="https://www.vireleo.me/favicon-48.png">
@@ -80,17 +80,233 @@
 <script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="css/style.css?v=20261114d">
 
+<style>
+/* Custom Work Page Enhancements */
+.work-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 32px 0 16px;
+  position: relative;
+  z-index: 3;
+}
+.work-filter-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.work-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(31, 198, 214, 0.6);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.work-filter-btn.is-active {
+  background: linear-gradient(135deg, #1fc6d6 0%, #3b82f6 100%);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(31, 198, 214, 0.35);
+}
+
+/* Upgraded Project Cards */
+.project-card-full {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.project-card-full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
+  border-color: #93c5fd;
+}
+.project-card-visual {
+  position: relative;
+  background: #0b1120;
+  overflow: hidden;
+  min-height: 230px;
+}
+.project-card-visual img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.project-card-full:hover .project-card-visual img {
+  transform: scale(1.03);
+}
+.project-badge-overlay {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.p-badge {
+  background: rgba(11, 17, 32, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.p-badge--live {
+  background: rgba(16, 185, 129, 0.85);
+  border-color: #34d399;
+}
+.p-badge--demo {
+  background: rgba(59, 130, 246, 0.85);
+  border-color: #60a5fa;
+}
+
+.project-card-body {
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.project-card-category {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+.project-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+.project-card-desc {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 16px;
+}
+
+.project-specs-block {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  border: 1px solid #e2e8f0;
+}
+.project-specs-row {
+  margin-bottom: 6px;
+  color: #334155;
+}
+.project-specs-row:last-child {
+  margin-bottom: 0;
+}
+.project-specs-label {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.project-stack-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+.tech-tag {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+.p-action-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.p-action-link:hover {
+  color: #1d4ed8;
+  transform: translateX(2px);
+}
+.p-action-cta {
+  font-size: 0.84rem;
+  color: #64748b;
+  text-decoration: none;
+}
+.p-action-cta:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+/* Filtering animation */
+.work-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+  margin-top: 24px;
+}
+@media (max-width: 640px) {
+  .work-grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+.project-card-full.is-hidden {
+  display: none !important;
+}
+</style>
+
 <!--seo:start-->
 <link rel="canonical" href="https://www.vireleo.me/work.html">
 <meta property="og:url" content="https://www.vireleo.me/work.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VIRELEO">
-<meta property="og:title" content="Selected Projects & Engineering Case Studies | VIRELEO">
-<meta property="og:description" content="Explore live case studies across custom web development, mobile apps, SaaS MVPs, and AI automation systems built and deployed by VIRELEO.">
+<meta property="og:title" content="Our Work & Projects | Web, SaaS & AI Solutions — VIRELEO">
+<meta property="og:description" content="Explore VIRELEO's portfolio of custom websites, SaaS platforms, mobile applications and AI automation projects. Discover how we engineer high-performance digital solutions.">
 <meta property="og:image" content="https://www.vireleo.me/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Selected Projects & Engineering Case Studies | VIRELEO">
-<meta name="twitter:description" content="Explore live case studies across custom web development, mobile apps, SaaS MVPs, and AI automation systems built and deployed by VIRELEO.">
+<meta name="twitter:title" content="Our Work & Projects | Web, SaaS & AI Solutions — VIRELEO">
+<meta name="twitter:description" content="Explore VIRELEO's portfolio of custom websites, SaaS platforms, mobile applications and AI automation projects. Discover how we engineer high-performance digital solutions.">
 <meta name="twitter:image" content="https://www.vireleo.me/images/og-image.jpg">
 <script type="application/ld+json">
 [
@@ -388,33 +604,348 @@
 <main id="main">
 <section class="banner">
   <div class="hero-bg" aria-hidden="true"></div>
-  <span class="banner-ghost" aria-hidden="true">Work</span>
+  <span class="banner-ghost" aria-hidden="true">Impact</span>
   <div class="wrap">
     <div class="banner-copy">
-<p class="label crumbs"><a href="index.html">Home</a><span aria-hidden="true">›</span><span>Work</span></p>
-    <p class="label kicker">Selected work</p>
-    <h1 data-type data-hl="intention.">Work built with intention.</h1>
-    <p class="lead">A selection of <span data-brand>VIRELEO</span> projects, grouped by discipline.</p>
-    <div class="filters" role="group" aria-label="Filter projects by category">
-      <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
-      <button type="button" class="filter" data-filter="web" aria-pressed="false">Website development</button>
-      <button type="button" class="filter" data-filter="app" aria-pressed="false">App Development</button>
-      <button type="button" class="filter" data-filter="automation" aria-pressed="false">AI Automation</button>
-      <button type="button" class="filter" data-filter="chatbot" aria-pressed="false">AI Chatbot Development</button>
+      <p class="label crumbs"><a href="index.html">Home</a><span aria-hidden="true">›</span><span>Selected Work</span></p>
+      <p class="label kicker">Portfolio &amp; Case Studies</p>
+      <h1 data-type data-hl="Inspiration.">Our Work. Your Next Inspiration.</h1>
+      <p class="lead">Explore the custom websites, SaaS platforms, cross-platform mobile applications, and AI-powered automation systems we've engineered. Every project represents a real-world challenge, a thoughtful architecture, and technology built around actual business growth.</p>
+      
+      <!-- Interactive Service Filters -->
+      <div class="work-filter-bar" role="tablist" aria-label="Filter portfolio projects">
+        <button type="button" class="work-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Projects (8)</button>
+        <button type="button" class="work-filter-btn" data-filter="saas" role="tab" aria-selected="false">SaaS &amp; Web Apps</button>
+        <button type="button" class="work-filter-btn" data-filter="web" role="tab" aria-selected="false">Websites &amp; Portfolios</button>
+        <button type="button" class="work-filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile &amp; IoT</button>
+        <button type="button" class="work-filter-btn" data-filter="ai" role="tab" aria-selected="false">AI Automation &amp; Chatbots</button>
+      </div>
     </div>
-  </div><div class="banner-facts" aria-label="At a glance"><div class="fact"><b>8</b><span>Projects built</span></div><div class="fact"><b>4</b><span>Disciplines</span></div><div class="fact"><b>100%</b><span>Custom-coded</span></div></div>
+    
+    <div class="banner-facts" aria-label="Portfolio stats">
+      <div class="fact"><b>8</b><span>Featured Projects</span></div>
+      <div class="fact"><b>4</b><span>Service Disciplines</span></div>
+      <div class="fact"><b>100%</b><span>Custom-Coded Solutions</span></div>
+    </div>
   </div>
 </section>
-<section class="work-list"><div class="wrap"><div class="card-grid" id="workGrid"><article class="card"><div class="thumb" data-cat="web"><div class="mk-browser"><div class="mk-bar"><i></i><i></i><i></i></div><div class="mk-page"><b>Appliory</b><i></i><i></i><em></em></div></div><img src="images/projects/appliory.jpg" alt="Appliory preview" loading="lazy" onerror="this.remove()" width="1200" height="900" decoding="async"></div><h3>Appliory</h3><p>A web platform providing free document checking, PDF management and image processing tools directly in the browser.</p><div class="card-foot"><span class="label">Website development · Live</span><a class="arrow-link label" href="https://appliory.tech/" target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about Appliory</span></a></div></article><article class="card"><div class="thumb" data-cat="web"><div class="mk-browser"><div class="mk-bar"><i></i><i></i><i></i></div><div class="mk-page"><b>Ammar Portfolio</b><i></i><i></i><em></em></div></div><img src="images/projects/ammar-portfolio.jpg" alt="Ammar Portfolio preview" loading="lazy" onerror="this.remove()" width="1200" height="900" decoding="async"></div><h3>Ammar Portfolio</h3><p>A responsive personal portfolio presenting skills, projects and contact details in a clean, fast layout.</p><div class="card-foot"><span class="label">Website development · Live</span><a class="arrow-link label" href="https://ammar-portfolio-web.netlify.app/" target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about Ammar Portfolio</span></a></div></article><article class="card"><div class="thumb" data-cat="web"><div class="mk-browser"><div class="mk-bar"><i></i><i></i><i></i></div><div class="mk-page"><b>Lean Canvas Model</b><i></i><i></i><em></em></div></div><img src="images/projects/lean-canvas-model.jpg" alt="Lean Canvas Model preview" loading="lazy" onerror="this.remove()" width="1200" height="900" decoding="async"></div><h3>Lean Canvas Model</h3><p>A web tool for laying out a business idea on the Lean Canvas: problem, solution, customers, revenue and more.</p><div class="card-foot"><span class="label">Website development · Live</span><a class="arrow-link label" href="https://lean-canvas-model.netlify.app/" target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about Lean Canvas Model</span></a></div></article><article class="card"><div class="thumb" data-cat="chatbot"><div class="mk-phone"><span class="bub"></span><span class="bub out"></span><span class="bub short"></span><span class="bub out short"></span><span class="bub"></span></div><img src="images/projects/whatsapp-dm-wide.jpg" alt="WhatsApp DM Automation preview" loading="lazy" onerror="this.remove()" width="1686" height="952" decoding="async"></div><h3>WhatsApp DM Automation</h3><p>Automated replies, lead capture and booking flows that run inside your WhatsApp conversations.</p><div class="card-foot"><span class="label">AI Chatbot Development · On request</span><a class="arrow-link label" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20DM%20Automation%20project." target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about WhatsApp DM Automation</span></a></div></article><article class="card"><div class="thumb" data-cat="chatbot"><div class="mk-phone"><span class="bub"></span><span class="bub out"></span><span class="bub short"></span><span class="bub out short"></span><span class="bub"></span></div><img src="images/projects/instagram-dm-wide.jpg" alt="Instagram DM Automation preview" loading="lazy" onerror="this.remove()" width="1192" height="697" decoding="async"></div><h3>Instagram DM Automation</h3><p>Instant, consistent answers to Instagram direct messages, so new enquiries are never left waiting.</p><div class="card-foot"><span class="label">AI Chatbot Development · On request</span><a class="arrow-link label" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Instagram%20DM%20Automation%20project." target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about Instagram DM Automation</span></a></div></article><article class="card"><div class="thumb" data-cat="app"><div class="mk-phone"><div class="sun"></div><div class="temp">24°</div><span class="bub"></span><span class="bub out short"></span><div class="alert">Hail warning</div></div><img src="images/projects/iot-weather.jpg" alt="IoT Weather and Hailstorm Protection System preview" loading="lazy" onerror="this.remove()" width="1376" height="768" decoding="async"></div><h3>IoT Weather and Hailstorm Protection System</h3><p>A mobile app connected to IoT sensors that tracks local weather and warns of incoming hailstorms so crops and property can be protected in time.</p><div class="card-foot"><span class="label">App Development · On request</span><a class="arrow-link label" href="https://wa.me/923215772078?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20IoT%20Weather%20and%20Hailstorm%20Protection%20System%20project." target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about IoT Weather and Hailstorm Protection System</span></a></div></article><article class="card"><div class="thumb" data-cat="automation"><div class="mk-flow"><span class="node"></span><i class="link"></i><span class="node"></span><i class="link"></i><span class="node"></span></div><img src="images/projects/ai-employee-os.jpg" alt="AI Employee OS preview" loading="lazy" onerror="this.remove()" width="1200" height="900" decoding="async"></div><h3>AI Employee OS</h3><p>An AI-powered workspace that takes on routine business tasks, like an extra member of the team.</p><div class="card-foot"><span class="label">AI Automation · Live</span><a class="arrow-link label" href="https://ai-employee-os-lhqy.vercel.app/" target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about AI Employee OS</span></a></div></article><article class="card"><div class="thumb" data-cat="automation"><div class="mk-flow"><span class="node"></span><i class="link"></i><span class="node"></span><i class="link"></i><span class="node"></span></div><img src="images/projects/mailnexa-ai.jpg" alt="MailNexa AI preview" loading="lazy" onerror="this.remove()" width="1200" height="900" decoding="async"></div><h3>MailNexa AI</h3><p>An email intelligence system that sorts incoming mail, summarizes it and helps you respond faster.</p><div class="card-foot"><span class="label">AI Automation · Live</span><a class="arrow-link label" href="https://email-intelligence-system-seven.vercel.app/select-portal" target="_blank" rel="noopener">Details <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> about MailNexa AI</span></a></div></article></div></div></section>
-<section class="section section-cream"><div class="wrap text-center" style="max-width:760px;margin:0 auto;text-align:center;"><p class="label">SaaS &amp; App Scoping</p><h2 class="section-title" style="margin-bottom:12px;">Planning an MVP or custom web application?</h2><p class="section-sub">Read our transparent breakdown of <a href="blog-cost-to-build-saas-mvp.html" style="color:#2563eb;font-weight:600;text-decoration:underline;">SaaS MVP development costs</a> ($3,500 – $12,000), milestone timelines, architecture tradeoffs, and how to avoid costly feature creep.</p></div></section>
+
+<!-- Upgraded Work Grid Section -->
+<section class="section section-cream" style="padding: clamp(3.5rem, 6vw, 6rem) 0;">
+  <div class="wrap">
+    <div class="work-grid-container" id="workGrid">
+      
+      <!-- Project 01: Appliory (Featured SaaS) -->
+      <article class="project-card-full" data-category="saas">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--live">● Live Product</span>
+            <span class="p-badge">SaaS MVP</span>
+          </div>
+          <img src="images/projects/appliory.jpg" alt="Appliory SaaS PDF and Document Utility Platform" loading="lazy" decoding="async" width="1200" height="900" onerror="this.src='images/projects/appliory.jpg'">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">SaaS Platform · Web Application</div>
+          <h3 class="project-card-title">Appliory — SaaS Document &amp; PDF Utility Platform</h3>
+          <p class="project-card-desc">A browser-based high-performance document utility platform for automated PDF management, inverted color reading transforms, and client-side image manipulation.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Cloud PDF tools suffer from sluggish upload queues and server storage privacy risks.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Client-side WebAssembly rendering engine with instant zero-upload processing and Stripe checkout.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> Sub-100ms in-browser conversion speeds and complete user data privacy.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">Next.js 15</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Stripe API</span>
+            <span class="tech-tag">Vercel Edge</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://appliory.tech/" target="_blank" rel="noopener" class="p-action-link">Launch Live App <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Scope Similar SaaS ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 02: MailNexa AI (Featured AI) -->
+      <article class="project-card-full" data-category="ai">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--live">● Live System</span>
+            <span class="p-badge">AI Automation</span>
+          </div>
+          <img src="images/projects/mailnexa-ai.jpg" alt="MailNexa AI Email Intelligence System" loading="lazy" decoding="async" width="1200" height="900">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">AI Automation · Email Intelligence</div>
+          <h3 class="project-card-title">MailNexa AI — Email Intelligence &amp; Autonomous Triage</h3>
+          <p class="project-card-desc">An intelligent email management system designed to connect with corporate inboxes, categorize urgent threads, summarize attachments, and draft contextual replies autonomously.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Enterprise inboxes receive hundreds of unorganized emails daily, causing response delays.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Real-time OAuth synchronization, vector embedding search, and automated LLM draft pipelines.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> 85% reduction in manual email sorting with instant context-aware reply suggestions.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">Next.js UI</span>
+            <span class="tech-tag">Python / FastAPI</span>
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">Vector Search</span>
+            <span class="tech-tag">SendGrid API</span>
+            <span class="tech-tag">Supabase Auth</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://email-intelligence-system-seven.vercel.app/select-portal" target="_blank" rel="noopener" class="p-action-link">View Live Portal <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Discuss AI Pipeline ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 03: NEXOS — AI Employee OS (Featured Automation) -->
+      <article class="project-card-full" data-category="ai">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--live">● Live Platform</span>
+            <span class="p-badge">Agent OS</span>
+          </div>
+          <img src="images/projects/ai-employee-os.jpg" alt="NEXOS AI Employee Operating System" loading="lazy" decoding="async" width="1200" height="900">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">AI Automation · Business Agent OS</div>
+          <h3 class="project-card-title">NEXOS — AI Employee OS (Business Workflow Engine)</h3>
+          <p class="project-card-desc">An autonomous multi-tenant operations workspace that acts like an extra team member—executing routine task routing, document analysis, and cross-platform CRM sync.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Operations teams lose countless hours manually re-keying data between forms, CRM, and billing.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Asynchronous worker queues, webhook event bus, role-based multi-user workspace hierarchy.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> Over 20 hours saved weekly per business department with complete audit logs.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Redis Queues</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Next.js Dashboard</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://ai-employee-os-lhqy.vercel.app/" target="_blank" rel="noopener" class="p-action-link">Explore OS Workspace <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Request Demo ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 04: IoT Weather & Hailstorm Alert System (Featured Mobile) -->
+      <article class="project-card-full" data-category="mobile">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--demo">● Demo on Request</span>
+            <span class="p-badge">Mobile &amp; IoT</span>
+          </div>
+          <img src="images/projects/iot-weather.jpg" alt="IoT Weather and Hailstorm Protection Mobile System" loading="lazy" decoding="async" width="1376" height="768">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">Mobile App · IoT Telemetry System</div>
+          <h3 class="project-card-title">IoT Weather &amp; Hailstorm Early Warning System</h3>
+          <p class="project-card-desc">A cross-platform mobile application connected to atmospheric IoT sensors that monitors local barometric conditions and warns farmers and property owners of hailstorms.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Sudden localized hailstorms cause severe agricultural and property damage without warning.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Direct MQTT hardware telemetry ingestion, automated threshold algorithms, and push alerts.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> Sub-3-second emergency alert notifications with real-time sensor graphs.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">Flutter (iOS &amp; Android)</span>
+            <span class="tech-tag">MQTT Protocol</span>
+            <span class="tech-tag">Python Backend</span>
+            <span class="tech-tag">Push Notifications</span>
+            <span class="tech-tag">Hardware Telemetry</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://wa.me/923215772078?text=Hi%20VIRELEO%2C%20I%20would%20like%20to%20request%20a%20demo%20of%20the%20IoT%20Weather%20and%20Hailstorm%20Protection%20System." target="_blank" rel="noopener" class="p-action-link">Request Demo via WhatsApp <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Discuss Mobile App ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 05: Bluesheet (Lean Canvas Generator) -->
+      <article class="project-card-full" data-category="saas">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--live">● Live Tool</span>
+            <span class="p-badge">Web Application</span>
+          </div>
+          <img src="images/projects/lean-canvas-model.jpg" alt="Bluesheet Lean Canvas Model Generator" loading="lazy" decoding="async" width="1200" height="900">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">SaaS &amp; Web Apps · Business Modeling</div>
+          <h3 class="project-card-title">Bluesheet — Lean Canvas Generator</h3>
+          <p class="project-card-desc">An interactive web tool designed for startup founders and product strategists to map business models, unit economics, customer segments, and revenue streams.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Traditional business plans are static, tedious to format, and slow to iterate.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Handcrafted zero-latency browser state machine, live local saving, and crisp PDF exporting.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> Instant browser rendering with zero server lag, fully accessible on desktop and tablet.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">JavaScript (ES6+)</span>
+            <span class="tech-tag">HTML5 Canvas</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">PDF Generation</span>
+            <span class="tech-tag">Netlify Edge</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://lean-canvas-model.netlify.app/" target="_blank" rel="noopener" class="p-action-link">Launch Bluesheet Tool <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Scope Web Tool ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 06: WhatsApp Business AI Chatbot -->
+      <article class="project-card-full" data-category="ai">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--demo">● Demo on Request</span>
+            <span class="p-badge">AI Chatbot</span>
+          </div>
+          <img src="images/projects/whatsapp-dm-wide.jpg" alt="WhatsApp Business AI Chatbot Automation" loading="lazy" decoding="async" width="1686" height="952">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">AI Chatbots · WhatsApp Cloud API</div>
+          <h3 class="project-card-title">WhatsApp Business AI Chatbot Automation</h3>
+          <p class="project-card-desc">24/7 autonomous conversational agent integrated directly with official Meta WhatsApp Cloud APIs for customer inquiries, lead qualification, and CRM synchronization.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Prospective clients message at all hours and abandon inquiries if not answered in minutes.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Custom LLM webhook integration, real-time lead qualification, and seamless human agent handover.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> 98% immediate response rate and 3x higher consultation booking rates.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">WhatsApp Cloud API</span>
+            <span class="tech-tag">Node.js / Express</span>
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">Webhooks</span>
+            <span class="tech-tag">CRM Sync</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://wa.me/923215772078?text=Hi%20VIRELEO%2C%20I%20would%20like%20to%20test%20the%20WhatsApp%20AI%20Chatbot%20demo." target="_blank" rel="noopener" class="p-action-link">Test WhatsApp Bot <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Integrate WhatsApp ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 07: Instagram Direct Message Lead Bot -->
+      <article class="project-card-full" data-category="ai">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--demo">● Demo on Request</span>
+            <span class="p-badge">AI Chatbot</span>
+          </div>
+          <img src="images/projects/instagram-dm-wide.jpg" alt="Instagram DM Automation Bot" loading="lazy" decoding="async" width="1192" height="697">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">AI Chatbots · Instagram Graph API</div>
+          <h3 class="project-card-title">Instagram DM Lead Generation AI Bot</h3>
+          <p class="project-card-desc">An automated conversation engine for Instagram Direct Messages that handles story mentions, keyword triggers, coupon deliveries, and booking appointments without delays.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> High-engagement Instagram campaigns lose sales when thousands of DMs are left unread.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Meta Graph API keyword listener, automated discount link delivery, and lead export.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> Instant response on every single comment or DM with 40% higher link clicks.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">Instagram Graph API</span>
+            <span class="tech-tag">Meta Cloud Webhooks</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">OAuth 2.0</span>
+            <span class="tech-tag">Google Sheets Sync</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://wa.me/923215772078?text=Hi%20VIRELEO%2C%20I%20would%20like%20to%20learn%20more%20about%20Instagram%20DM%20Automation." target="_blank" rel="noopener" class="p-action-link">Request Demo Brief <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Connect Instagram ➔</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 08: Lead Engineer Handcrafted Portfolio -->
+      <article class="project-card-full" data-category="web">
+        <div class="project-card-visual">
+          <div class="project-badge-overlay">
+            <span class="p-badge p-badge--live">● Live Site</span>
+            <span class="p-badge">Web Portfolio</span>
+          </div>
+          <img src="images/projects/ammar-portfolio.jpg" alt="Ammar Hassan Malik Engineering Portfolio" loading="lazy" decoding="async" width="1200" height="900">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-category">Websites &amp; Portfolios · Clean Architecture</div>
+          <h3 class="project-card-title">Ammar Hassan Malik — Engineering Portfolio</h3>
+          <p class="project-card-desc">An ultra-fast, responsive developer portfolio showcasing architecture case studies, engineering benchmarks, and interactive skill demonstrations.</p>
+          
+          <div class="project-specs-block">
+            <div class="project-specs-row"><span class="project-specs-label">Challenge:</span> Modern portfolios often bundle hundreds of kilobytes of unneeded JavaScript that slows mobile devices.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Solution:</span> Hand-coded semantic HTML, modular CSS, and zero third-party dependencies for maximum speed.</div>
+            <div class="project-specs-row"><span class="project-specs-label">Result:</span> Sub-second loading with a perfect 100 Google PageSpeed optimization score.</div>
+          </div>
+
+          <div class="project-stack-wrap">
+            <span class="tech-tag">HTML5 Semantic</span>
+            <span class="tech-tag">CSS3 Glassmorphism</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">Netlify Edge</span>
+            <span class="tech-tag">100 PageSpeed</span>
+          </div>
+
+          <div class="project-card-actions">
+            <a href="https://ammar-portfolio-web.netlify.app/" target="_blank" rel="noopener" class="p-action-link">View Live Portfolio <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a href="contact.html" class="p-action-cta">Build Your Website ➔</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Scoping & Knowledge Section -->
+<section class="section section-cream" style="border-top: 1px solid rgba(16,28,54,.08);background:#f8fafc;padding: clamp(3rem, 5vw, 4.5rem) 0;">
+  <div class="wrap text-center" style="max-width:760px;margin:0 auto;text-align:center;">
+    <p class="label kicker">Transparent Scoping Guides</p>
+    <h2 class="section-title" style="margin-bottom:12px;">Planning an MVP or custom digital product?</h2>
+    <p class="section-sub" style="font-size:1.02rem;color:#475569;line-height:1.7;">
+      Read our detailed engineering playbooks on <a href="blog-cost-to-build-saas-mvp.html" style="color:#2563eb;font-weight:700;text-decoration:underline;">SaaS MVP Development Costs</a> ($4,500 – $12,000) or our dedicated <a href="blog-cost-to-build-an-mvp.html" style="color:#2563eb;font-weight:700;text-decoration:underline;">General MVP Cost Guide</a> across web, mobile, and IoT platforms.
+    </p>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
 <section class="cta">
   <div class="wrap">
-    <h2 data-split>Have a project in mind?</h2>
-    <p>Tell us what you need and we will reply with questions or a rough plan.</p>
-    <div class="cta-actions" data-reveal><a href="contact.html" class="btn btn-blue">Discuss your project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+    <h2 data-split>Have an ambitious project in mind?</h2>
+    <p>Tell us what you want to build. We'll examine your technical specifications and provide an architectural blueprint with a fixed milestone quotation within 24 hours.</p>
+    <div class="cta-actions" data-reveal>
+      <a href="contact.html" class="btn btn-blue">Start your project discovery <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+      <a href="https://wa.me/923215772078" target="_blank" rel="noopener" class="btn btn-outline-light">Chat on WhatsApp ↗</a>
+    </div>
   </div>
 </section>
 </main>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid" data-stagger>
@@ -444,50 +975,42 @@
     <div class="footer-base"><p>&copy; <span data-year>2026</span> <span data-brand>VIRELEO</span>. All rights reserved.</p><p><a href="privacy-policy.html" style="color:inherit;opacity:.7;">Privacy Policy</a>&nbsp;&nbsp;·&nbsp;&nbsp;Custom-coded. Built to be owned.</p></div>
   </div>
 </footer>
-<nav class="dock" aria-label="Services quick links">
-  <a href="website-development.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Websites</a>
-  <a href="app-development.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg>Apps</a>
-  <a href="ai-automation.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></svg>AI Automation</a>
-  <a href="ai-chatbots.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>AI Chatbots</a>
-</nav>
 <a href="https://wa.me/923215772078" class="wa" data-wa target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" role="img"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.95L0 24l6.27-1.64a11.9 11.9 0 0 0 5.8 1.48h.01C18.66 23.84 24 18.5 24 11.92c0-3.18-1.24-6.17-3.48-8.44ZM12.08 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.24-.37a9.83 9.83 0 0 1-1.51-5.25c0-5.45 4.44-9.89 9.9-9.89a9.82 9.82 0 0 1 7 2.9 9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.88-9.92 9.88Zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg><span class="wa-tip" data-wa-text>+92 321 5772078</span></a>
-<script src="js/script.js?v=20261028" defer></script>
-<script>
-  window.va = window.va || function () {
-    (window.vaq = window.vaq || []).push(arguments);
-  };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
 
-<!-- Cookie Consent Banner -->
-<div id="cc-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0c1222;color:#fff;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.12);font-family:Inter,sans-serif;font-size:.88rem;line-height:1.5">
-  <p style="margin:0;flex:1;min-width:200px">We use cookies for analytics and personalised ads (Google AdSense). <a href="privacy-policy.html" style="color:#1fc6d6;text-decoration:underline">Privacy Policy</a></p>
-  <div style="display:flex;gap:10px;flex-shrink:0">
-    <button id="cc-deny"   style="padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;cursor:pointer;font-size:.85rem">Decline</button>
-    <button id="cc-accept" style="padding:9px 20px;border-radius:999px;border:none;background:linear-gradient(90deg,#1fc6d6,#477bff);color:#fff;cursor:pointer;font-size:.85rem;font-weight:600">Accept all</button>
-  </div>
-</div>
-<script>
-(function(){
-  var banner = document.getElementById('cc-banner');
-  var saved  = localStorage.getItem('vireleo_consent');
-  if(!saved) banner.style.display = 'flex';
+<script src="js/script.js?v=20261102" defer></script>
 
-  function updateConsent(choice){
-    gtag('consent','update',{
-      'ad_storage':        choice,
-      'ad_user_data':      choice,
-      'ad_personalization':choice,
-      'analytics_storage': choice
+<!-- Interactive Portfolio Filtering Script -->
+<script>
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.work-filter-btn');
+    var cards = document.querySelectorAll('.project-card-full');
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+
+        // Update active button state
+        buttons.forEach(function(b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Filter cards
+        cards.forEach(function(card) {
+          var category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
     });
-    localStorage.setItem('vireleo_consent', choice);
-    banner.style.display = 'none';
-  }
-
-  document.getElementById('cc-accept').addEventListener('click', function(){ updateConsent('granted'); });
-  document.getElementById('cc-deny').addEventListener('click',   function(){ updateConsent('denied');  });
+  });
 })();
 </script>
-<!-- End Cookie Consent Banner -->
 </body>
 </html>
