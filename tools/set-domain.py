@@ -38,6 +38,7 @@ PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
     ('blog-whatsapp-instagram-ai-chatbot-guide.html', '/blog-whatsapp-instagram-ai-chatbot-guide.html', 'BlogPosting', 'WhatsApp & Instagram AI Bots', '0.85', 'monthly'),
     ('blog-ai-workflow-automation-guide.html', '/blog-ai-workflow-automation-guide.html', 'BlogPosting', 'AI Workflow Automation', '0.85', 'monthly'),
     ('contact.html', '/contact.html', 'ContactPage', 'Contact', '0.8', 'monthly'),
+    ('thank-you.html', '/thank-you.html', 'WebPage', 'Thank You', '0.3', 'yearly'),
     ('privacy-policy.html', '/privacy-policy.html', 'WebPage', 'Privacy Policy', '0.5', 'yearly'),
 ]
 
