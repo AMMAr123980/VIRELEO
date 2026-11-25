@@ -33,6 +33,7 @@ PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
     ('about.html', '/about.html', 'AboutPage', 'About', '0.7', 'monthly'),
     ('blog.html', '/blog.html', 'CollectionPage', 'Blog', '0.85', 'weekly'),
     ('blog-cost-to-build-saas-mvp.html', '/blog-cost-to-build-saas-mvp.html', 'BlogPosting', 'SaaS MVP Cost', '0.85', 'monthly'),
+    ('blog-cost-to-build-an-mvp.html', '/blog-cost-to-build-an-mvp.html', 'BlogPosting', 'MVP Development Cost', '0.85', 'monthly'),
     ('blog-custom-code-vs-wordpress.html', '/blog-custom-code-vs-wordpress.html', 'BlogPosting', 'Custom Code vs WordPress', '0.85', 'monthly'),
     ('blog-whatsapp-instagram-ai-chatbot-guide.html', '/blog-whatsapp-instagram-ai-chatbot-guide.html', 'BlogPosting', 'WhatsApp & Instagram AI Bots', '0.85', 'monthly'),
     ('blog-ai-workflow-automation-guide.html', '/blog-ai-workflow-automation-guide.html', 'BlogPosting', 'AI Workflow Automation', '0.85', 'monthly'),
@@ -409,30 +410,36 @@ def build_block(file, path, ptype, crumb, title, desc):
                 "@type": "ItemList",
                 "@id": f"{SITE}/blog.html#itemlist",
                 "name": "Featured Playbooks",
-                "numberOfItems": 4,
+                "numberOfItems": 5,
                 "itemListOrder": "https://schema.org/ItemListOrderAscending",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "How Much Does It Cost to Build a SaaS MVP in 2026? Complete Cost & Timeline Guide",
+                        "name": "SaaS MVP Development Cost in 2026: Pricing, Features & Budget",
                         "url": f"{SITE}/blog-cost-to-build-saas-mvp.html"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
+                        "name": "MVP Development Cost in 2026: How Much Does an MVP Cost?",
+                        "url": f"{SITE}/blog-cost-to-build-an-mvp.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
                         "name": "Custom Code vs WordPress: Speed, Security & Scalability Comparison for Business",
                         "url": f"{SITE}/blog-custom-code-vs-wordpress.html"
                     },
                     {
                         "@type": "ListItem",
-                        "position": 3,
+                        "position": 4,
                         "name": "How to Automate WhatsApp & Instagram DMs with Custom AI Chatbots (Meta Cloud API)",
                         "url": f"{SITE}/blog-whatsapp-instagram-ai-chatbot-guide.html"
                     },
                     {
                         "@type": "ListItem",
-                        "position": 4,
+                        "position": 5,
                         "name": "AI Workflow Automation: How Small Businesses Save 20+ Hours Every Week",
                         "url": f"{SITE}/blog-ai-workflow-automation-guide.html"
                     }
@@ -785,26 +792,18 @@ def build_block(file, path, ptype, crumb, title, desc):
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "How much does an MVP cost in 2026?",
+                        "name": "How much does it cost to build a SaaS MVP in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "A production-grade SaaS Minimum Viable Product (MVP) typically costs between $3,500 and $12,000. A lean micro-SaaS starts around $2,500 – $4,500, while complex platforms with multi-tenant permissions or AI APIs range from $8,000 to $18,000."
+                            "text": "Building a custom, production-grade SaaS Minimum Viable Product (MVP) in 2026 typically costs between $4,500 and $12,000 with a delivery timeline of 4 to 8 weeks. A focused micro-SaaS starts at $4,500–$6,500, a standard multi-tenant B2B platform costs $7,500–$11,000, and an AI-powered SaaS platform ranges between $9,000 and $14,000."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How much should I spend on an MVP as a startup founder?",
+                        "name": "What are the ongoing monthly infrastructure costs for a SaaS MVP after launch?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "As a rule of thumb, allocate 60% of your initial budget to custom engineering and core product architecture ($3,500 – $8,000), leaving the remaining 40% for user acquisition, customer interviews, and domain setup."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the realistic timeline to build and launch an MVP?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Our standard SaaS MVP builds launch within 3 to 6 weeks, divided into weekly milestones: Architecture & Database Design (Week 1), UI & Core Feature Workflows (Weeks 2-3), Stripe Billing & Integrations (Week 4), and Quality Assurance Handover (Weeks 5-6)."
+                            "text": "A modern lean SaaS MVP built on modern cloud services typically incurs $45 to $75 per month in operating expenses: Vercel/Cloudflare hosting ($20/mo), Supabase/Neon PostgreSQL database ($25/mo), Resend transactional email ($0–$15/mo), and Stripe fees (2.9% + 30¢ per transaction only when revenue is generated)."
                         }
                     },
                     {
@@ -817,10 +816,18 @@ def build_block(file, path, ptype, crumb, title, desc):
                     },
                     {
                         "@type": "Question",
-                        "name": "What is the cost to build a SaaS MVP with AI features?",
+                        "name": "Why is a custom-coded SaaS MVP better than building on No-Code tools like Bubble?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "An AI-powered SaaS MVP that integrates OpenAI GPT models, Anthropic Claude, or vector search (Pinecone, Weaviate) typically costs between $9,000 and $18,000. The added cost comes from LLM API orchestration, prompt engineering, background inference queues, and semantic search pipelines. Timeline is 6 to 10 weeks."
+                            "text": "Custom-coded SaaS apps (built with Next.js, Node.js, and PostgreSQL) offer zero vendor lock-in, sub-second response times, full IP ownership for investors, predictable cloud hosting costs, and unlimited scalability. No-code tools frequently impose severe database query limits, vendor lock-in, and steep tiered pricing once user traffic increases."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does an AI-powered SaaS MVP cost compared to standard software?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "An AI-powered SaaS MVP typically costs between $9,000 and $14,000. The additional engineering covers OpenAI/Claude API integration, streaming responses, vector database embeddings (Pinecone/pgvector), asynchronous worker queues, and prompt token caching."
                         }
                     },
                     {
@@ -828,31 +835,55 @@ def build_block(file, path, ptype, crumb, title, desc):
                         "name": "Can I build a SaaS MVP for under $5,000?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes — if the scope is tightly controlled. A micro-SaaS with a single core workflow with basic authentication and Stripe billing can be built for $2,500 to $4,500 in 2 to 4 weeks. The key is ruthless feature prioritization: build only what you need to get your first 10 paying customers."
+                            "text": "Yes — if the scope is tightly focused. A micro-SaaS with a single core workflow with passwordless auth and Stripe billing can be engineered for $4,500 to $5,500 in 3 to 4 weeks. The key is strict scoping: build only the single high-value workflow needed to sign up paying early adopters."
+                        }
+                    }
+                ]
+            })
+
+        if file == 'blog-cost-to-build-an-mvp.html':
+            graph.append({
+                "@type": "FAQPage",
+                "@id": url + '#faq',
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How much does an MVP cost to build in 2026?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "In 2026, building a custom Minimum Viable Product (MVP) typically costs between $3,500 and $12,000 for early-stage startups. A simple web app prototype costs $3,500–$5,500, a cross-platform mobile app MVP costs $5,500–$9,500, and a multi-sided marketplace or hardware/IoT software platform ranges between $7,500 and $12,000."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How much does it cost to go from MVP to full SaaS product?",
+                        "name": "How long does it take to develop a startup MVP?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Scaling a production MVP into a full SaaS product typically requires an additional investment of $8,000 to $30,000 depending on features added, such as advanced team permissions, multi-workspace support, analytics dashboards, and mobile app versions."
+                            "text": "A focused MVP should take between 4 and 8 weeks to design, develop, and deploy. If an agency quotes 4 to 6 months for an MVP, the scope is too broad. Real MVPs test one core hypothesis with real users as quickly as possible."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Should I hire a freelancer or an agency to build my SaaS MVP?",
+                        "name": "What is the difference between an MVP and a prototype?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "It depends on your risk tolerance. Vetted senior freelancers can be cost-effective but carry higher management overhead and delivery risk. Specialist studios like VIRELEO offer the structure and accountability of an agency at closer to freelancer pricing ($3,500 – $12,000) with milestone contracts and direct engineer access."
+                            "text": "A prototype is a clickable design or non-functional visual mockup used to demonstrate an idea. An MVP (Minimum Viable Product) is fully functional, production-deployed software with real user accounts, live database storage, and actual data workflows that customers can use and pay for."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What is the MVP development cost in Saudi Arabia or the GCC?",
+                        "name": "How should founders allocate their MVP budget?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "In Saudi Arabia and the GCC (Riyadh, Jeddah, Dubai), software agencies charge approximately 55,000 SAR to 130,000 SAR ($15,000 – $35,000 USD) for a custom SaaS MVP. Early-stage startups often partner with remote specialist engineering studios like VIRELEO to obtain high-performance code, bilingual readiness, and full IP ownership for 13,000 SAR to 45,000 SAR ($3,500 – $12,000 USD)."
+                            "text": "Founders should allocate 60% of their seed budget to custom core engineering and database architecture, 20% to UX design and responsive interfaces, 10% to QA testing and cloud deployment, and reserve the remaining 10% for post-launch user feedback iterations."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I retain full code ownership after the project?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. With VIRELEO, you retain 100% intellectual property ownership. Private GitHub repositories, database credentials, and production deployment pipelines are handed over directly to your team upon completion."
                         }
                     }
                 ]
