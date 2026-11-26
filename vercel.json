@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(favicon.*|icon-.*|apple-touch-icon.png|site.webmanifest)",

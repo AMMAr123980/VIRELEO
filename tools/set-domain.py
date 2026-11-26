@@ -26,6 +26,7 @@ PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
     ('index.html', '/', 'WebPage', None, '1.0', 'weekly'),
     ('website-development.html', '/website-development.html', 'WebPage', 'Website Development', '0.9', 'monthly'),
     ('app-development.html', '/app-development.html', 'WebPage', 'App Development', '0.9', 'monthly'),
+    ('saas-development.html', '/saas-development.html', 'WebPage', 'SaaS Development', '0.9', 'monthly'),
     ('ai-automation.html', '/ai-automation.html', 'WebPage', 'AI Automation', '0.9', 'monthly'),
     ('ai-chatbots.html', '/ai-chatbots.html', 'WebPage', 'AI Chatbots', '0.9', 'monthly'),
     ('work.html', '/work.html', 'CollectionPage', 'Work', '0.8', 'weekly'),
@@ -45,6 +46,7 @@ PAGES = [  # file, path, schema type, breadcrumb name, priority, changefreq
 SERVICES = [
     ('Website development', 'Custom-coded business websites, e-commerce, landing pages and web applications.', f'{SITE}/website-development.html'),
     ('Mobile app development', 'Mobile and web apps shaped around real workflows, users and outcomes.', f'{SITE}/app-development.html'),
+    ('SaaS and custom software development', 'Scalable multi-tenant SaaS platforms, MVP architecture, and cloud web applications.', f'{SITE}/saas-development.html'),
     ('AI workflow automation', 'Connected, AI-assisted workflows that remove repetitive business tasks.', f'{SITE}/ai-automation.html'),
     ('AI chatbots and messaging automation', 'AI chatbots for websites, WhatsApp and Instagram direct messages.', f'{SITE}/ai-chatbots.html'),
 ]
@@ -466,7 +468,7 @@ def build_block(file, path, ptype, crumb, title, desc):
                 "@type": "ItemList",
                 "@id": f"{SITE}/capabilities.html#capabilities",
                 "name": "VIRELEO Core Capabilities",
-                "numberOfItems": 4,
+                "numberOfItems": 5,
                 "itemListOrder": "https://schema.org/ItemListOrderAscending",
                 "itemListElement": [
                     {
@@ -488,9 +490,9 @@ def build_block(file, path, ptype, crumb, title, desc):
                         "item": {
                             "@type": "Service",
                             "@id": f"{SITE}/app-development.html#service",
-                            "name": "Applications & software",
-                            "serviceType": "Application and software development",
-                            "description": "Useful web applications shaped around the workflows, users and outcomes a business needs.",
+                            "name": "Mobile app development",
+                            "serviceType": "Mobile app development",
+                            "description": "Native Android, iOS and cross-platform mobile applications shaped around users and business workflows.",
                             "url": f"{SITE}/app-development.html",
                             "provider": {"@id": org_id}
                         }
@@ -498,6 +500,19 @@ def build_block(file, path, ptype, crumb, title, desc):
                     {
                         "@type": "ListItem",
                         "position": 3,
+                        "item": {
+                            "@type": "Service",
+                            "@id": f"{SITE}/saas-development.html#service",
+                            "name": "SaaS and custom software",
+                            "serviceType": "SaaS and MVP engineering",
+                            "description": "Scalable multi-tenant SaaS platforms, startup MVP engineering, and subscription web applications.",
+                            "url": f"{SITE}/saas-development.html",
+                            "provider": {"@id": org_id}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
                         "item": {
                             "@type": "Service",
                             "@id": f"{SITE}/ai-automation.html#service",
@@ -510,7 +525,7 @@ def build_block(file, path, ptype, crumb, title, desc):
                     },
                     {
                         "@type": "ListItem",
-                        "position": 4,
+                        "position": 5,
                         "item": {
                             "@type": "Service",
                             "@id": f"{SITE}/ai-chatbots.html#service",
@@ -760,7 +775,8 @@ def build_block(file, path, ptype, crumb, title, desc):
             })
         service_pages = {
             'website-development.html': ('Custom Website Development Services', 'Custom-coded business websites, web applications, landing pages, and scalable e-commerce storefronts.'),
-            'app-development.html': ('Mobile App & SaaS MVP Development', 'End-to-end iOS, Android, cross-platform mobile apps, cloud web applications, and production-ready SaaS MVPs.'),
+            'app-development.html': ('Mobile App Development Company', 'End-to-end iOS, Android, cross-platform mobile apps, cloud web applications, and mobile UI/UX engineering.'),
+            'saas-development.html': ('SaaS Development Company & MVP Engineering', 'Scalable multi-tenant SaaS platforms, startup MVP engineering, subscription billing, and cloud web applications.'),
             'ai-automation.html': ('AI Workflow Automation Agency', 'AI-assisted workflows for lead routing, information processing, notifications, and connected autonomous systems.'),
             'ai-chatbots.html': ('Custom AI Chatbot Development', 'Website, WhatsApp Business API, and Instagram DM chatbot automation for 24/7 customer support and lead qualification.'),
         }
