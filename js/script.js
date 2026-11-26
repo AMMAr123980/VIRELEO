@@ -442,7 +442,7 @@ const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke
 
   /* Work page: filters ---------------------------------------------------------------------------------- */
   const grid = $("#workGrid");
-  if (grid) {
+  if (grid && !grid.classList.contains("work-grid-container") && $$(".filter").length) {
     const buttons = $$(".filter");
     const apply = (k) => {
       buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === k)));

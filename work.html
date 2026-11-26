@@ -111,10 +111,10 @@
   transform: translateY(-1px);
 }
 .work-filter-btn.is-active {
-  background: linear-gradient(135deg, #1fc6d6 0%, #3b82f6 100%);
-  border-color: transparent;
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(31, 198, 214, 0.35);
+  background: linear-gradient(135deg, #1fc6d6 0%, #3b82f6 100%) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(31, 198, 214, 0.35) !important;
 }
 
 /* Upgraded Project Cards */
@@ -634,10 +634,10 @@
 <!-- Upgraded Work Grid Section -->
 <section class="section section-cream" style="padding: clamp(3.5rem, 6vw, 6rem) 0;">
   <div class="wrap">
-    <div class="work-grid-container" id="workGrid">
+    <div class="work-grid-container" id="portfolioCardsGrid">
       
       <!-- Project 01: Appliory (Featured SaaS) -->
-      <article class="project-card-full" data-category="saas">
+      <article class="project-card-full" data-category="saas web">
         <div class="project-card-visual">
           <div class="project-badge-overlay">
             <span class="p-badge p-badge--live">● Live Product</span>
@@ -709,7 +709,7 @@
       </article>
 
       <!-- Project 03: NEXOS — AI Employee OS (Featured Automation) -->
-      <article class="project-card-full" data-category="ai">
+      <article class="project-card-full" data-category="ai saas">
         <div class="project-card-visual">
           <div class="project-badge-overlay">
             <span class="p-badge p-badge--live">● Live Platform</span>
@@ -780,7 +780,7 @@
       </article>
 
       <!-- Project 05: Bluesheet (Lean Canvas Generator) -->
-      <article class="project-card-full" data-category="saas">
+      <article class="project-card-full" data-category="saas web">
         <div class="project-card-visual">
           <div class="project-badge-overlay">
             <span class="p-badge p-badge--live">● Live Tool</span>
@@ -984,34 +984,60 @@
 <!-- Interactive Portfolio Filtering Script -->
 <script>
 (function() {
-  document.addEventListener('DOMContentLoaded', function() {
+  function initPortfolioFilter() {
     var buttons = document.querySelectorAll('.work-filter-btn');
     var cards = document.querySelectorAll('.project-card-full');
+    if (!buttons.length || !cards.length) return;
 
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var filter = btn.getAttribute('data-filter');
-
-        // Update active button state
-        buttons.forEach(function(b) {
+    function applyFilter(filter) {
+      // 1. Update active button state
+      buttons.forEach(function(b) {
+        var isTarget = (b.getAttribute('data-filter') === filter);
+        if (isTarget) {
+          b.classList.add('is-active');
+          b.setAttribute('aria-selected', 'true');
+        } else {
           b.classList.remove('is-active');
           b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('is-active');
-        btn.setAttribute('aria-selected', 'true');
-
-        // Filter cards
-        cards.forEach(function(card) {
-          var category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            card.classList.remove('is-hidden');
-          } else {
-            card.classList.add('is-hidden');
-          }
-        });
+        }
       });
+
+      // 2. Filter project cards
+      cards.forEach(function(card) {
+        var rawCats = card.getAttribute('data-category') || '';
+        var cats = rawCats.trim().split(/\s+/);
+        var matches = (filter === 'all' || cats.indexOf(filter) !== -1);
+        if (matches) {
+          card.style.removeProperty('display');
+          card.classList.remove('is-hidden');
+        } else {
+          card.style.display = 'none';
+          card.classList.add('is-hidden');
+        }
+      });
+    }
+
+    // Attach click listeners
+    buttons.forEach(function(btn) {
+      btn.onclick = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        var filter = btn.getAttribute('data-filter') || 'all';
+        applyFilter(filter);
+      };
     });
-  });
+
+    // Check query params if any
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('cat') || params.get('filter') || 'all';
+    applyFilter(initial);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolioFilter);
+  } else {
+    initPortfolioFilter();
+  }
+  window.addEventListener('load', initPortfolioFilter);
 })();
 </script>
 </body>
