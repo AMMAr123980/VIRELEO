@@ -267,7 +267,7 @@
     </p>
 
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:40px;">
-      <a href="https://wa.me/923215772078" target="_blank" rel="noopener" class="btn btn-blue" style="padding:13px 28px;">Chat directly on WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+      <a id="thankYouWaBtn" href="https://wa.me/923215772078" target="_blank" rel="noopener" class="btn btn-blue" style="padding:13px 28px;">Chat directly on WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
       <a href="work.html" class="btn btn-outline-light" style="padding:13px 26px;">Explore our portfolio work ↗</a>
     </div>
 
@@ -310,6 +310,18 @@
     <div class="footer-base"><p>&copy; 2026 VIRELEO. All rights reserved.</p></div>
   </div>
 </footer>
+<script>
+(function() {
+  try {
+    var brief = localStorage.getItem('vireleo_pending_brief');
+    var btn = document.getElementById('thankYouWaBtn');
+    if (brief && btn) {
+      btn.href = "https://wa.me/923215772078?text=" + encodeURIComponent(brief);
+      btn.innerHTML = 'Send Brief on WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>';
+    }
+  } catch(e) {}
+})();
+</script>
 <script src="js/script.js?v=20261102" defer></script>
 </body>
 </html>

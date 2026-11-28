@@ -946,42 +946,59 @@
           });
         }
 
-        // Format brief
+        // Format comprehensive WhatsApp brief with all client details
         var brief = "🚀 *New Project Discovery Inquiry | VIRELEO*\n\n" +
-          "*Client:* " + name + (company ? " (" + company + ")" : "") + "\n" +
-          "*Email:* " + email + "\n" +
-          (phone ? "*Phone/WhatsApp:* " + phone + "\n" : "") +
-          (website ? "*Website:* " + website + "\n" : "") +
-          "*Service:* " + service + "\n" +
-          "*Budget:* " + budget + "\n" +
-          "*Timeline:* " + timeline + "\n" +
+          "*Client Name:* " + name + (company ? " (" + company + ")" : "") + "\n" +
+          "*Work Email:* " + email + "\n" +
+          (phone ? "*Direct Phone/WhatsApp:* " + phone + "\n" : "") +
+          (website ? "*Current Website:* " + website + "\n" : "") +
+          "*Selected Service:* " + service + "\n" +
+          "*Estimated Budget:* " + budget + "\n" +
+          "*Target Timeline:* " + timeline + "\n" +
           "*Preferred Contact:* " + prefContact + "\n";
 
         if (selectedFeatures.length > 0) {
           brief += "*Scope Checklist:* " + selectedFeatures.join(", ") + "\n";
         }
 
-        brief += "\n*Project Details:*\n" + message;
+        brief += "\n*Project Details & Goals:*\n" + message;
 
         // Save lead data locally
         try {
+          localStorage.setItem('vireleo_pending_brief', brief);
           localStorage.setItem('vireleo_discovery_lead', JSON.stringify({
             name: name,
             email: email,
+            phone: phone,
+            company: company,
             service: service,
             budget: budget,
             date: new Date().toISOString()
           }));
         } catch(e) {}
 
-        // Open WhatsApp with structured brief if preferred, otherwise direct to thank-you
         var waUrl = "https://wa.me/923215772078?text=" + encodeURIComponent(brief);
-        if (prefContact === 'WhatsApp' || phone) {
-          window.open(waUrl, '_blank', 'noopener');
+
+        // Visual feedback on button
+        var submitBtn = document.getElementById('cfSubmitBtn');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Connecting to WhatsApp... <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>';
         }
 
-        // Smoothly redirect to thank-you page
-        window.location.href = "thank-you.html";
+        // Direct redirect to WhatsApp with full pre-filled inquiry
+        setTimeout(function() {
+          window.location.href = waUrl;
+        }, 350);
+      });
+
+      // Reset button if user navigates back to page
+      window.addEventListener('pageshow', function() {
+        var submitBtn = document.getElementById('cfSubmitBtn');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Submit Project Inquiry <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>';
+        }
       });
     }
   });
